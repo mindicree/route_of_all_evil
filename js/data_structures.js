@@ -64,6 +64,7 @@ class Player {
         this.current_weapon = null
 
         this.current_hp = this.hp
+        this.current_gold = 0
     }
 }
 
