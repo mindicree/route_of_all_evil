@@ -3,6 +3,10 @@ let player;
 let current_enemy;
 let current_boss;
 let current_routes;
+let current_story;
+let current_level;
+
+let current_screen;
 
 // screen initializations
 let game_screen_container = document.querySelector('#game_screen_container')
