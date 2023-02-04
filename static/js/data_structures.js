@@ -5,6 +5,7 @@ class Enemy {
         this.atk = atk
         this.def = def
         this.image = image
+        this.current_hp = hp
     }
 }
 
