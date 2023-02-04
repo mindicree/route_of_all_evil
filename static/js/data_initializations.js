@@ -36,12 +36,12 @@ let events = [
     ),
     new Event (
         "The Witch's Dilemna",
-        "witch.jpg",
-        "Donec libero mauris, hendrerit eu turpis venenatis, vestibulum volutpat purus. Ut pharetra convallis nulla vitae venenatis. Mauris gravida turpis dui. Nullam posuere diam id arcu varius egestas. Phasellus non laoreet arcu, vitae mattis nunc. In non lorem arcu. Praesent semper tempor tristique. Integer commodo faucibus nunc et iaculis. Cras ac venenatis libero, nec hendrerit arcu. Sed pretium justo mauris, id accumsan sapien eleifend vel. Quisque quis elementum quam.",
+        "witchs_dilemna.jpg",
+        "Life has never been easy for these people. Many have burned by the hands of the previous generations. Their eradication, however, has had both positive and negative impact. In the present, however, the negatives are very prominent. \"Please sir, help me...\" she meekly says, outreaching a rotting hand in an almost zombie like fashion. ",
         "Attempt to help",
-        "Leave for now...",
-        "You did the thing",
-        "You decided to leave",
+        "Ignore the potential danger",
+        "You proceed to help her up by the hand. ",
+        "You continue on as if you heard nothing. Who knows what troubles could arise by helping those with unspeakable powers.",
         () => {
             console.log('Choice 1!')
         },
