@@ -6,8 +6,7 @@ class Enemy {
         this.def = def
         this.image = image
         this.current_hp = hp
-
-        this.level = 1
+        this.level = level
     }
 }
 
@@ -50,7 +49,14 @@ class Potion extends Item {
 
 class Boss {
     constructor(name, image, hp, atk, def, level=1) {
-        
+        this.name = name
+        this.image = image
+        this.hp = hp
+        this.atk = atk
+        this.def = def
+        this.level = level
+
+        this.current_hp = hp
     }
 }
 
@@ -67,7 +73,7 @@ class Player {
         this.current_leg = null
         this.current_weapon = null
 
-        this.current_hp = this.hp
+        this.current_hp = hp
         this.current_gold = 0
     }
 }
