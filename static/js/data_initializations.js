@@ -1,4 +1,24 @@
-let stories = [
+let weapons = [
+    new Weapon("Sword of Ill Will", "soiw.jpg", 6)
+]
+
+let armors = [
+    new Armor("Helmet of Hermos", "hoh.jpg", ARMOR_TYPES.HEAD, 5)
+]
+
+let potions = [
+    new Potion("Potion of Lesser Healing", "plh", 0.25)
+]
+
+let enemies = [
+    new Enemy ("They That Speak", "they_that_speak.jpg", 20,3,7)
+]
+
+let bosses = [
+    new Boss ("Messenger of Ragnarok", "mor.jpg", 100, 10, 14)
+]
+
+let events = [
     new Event (
         "The Witch's Dilemna",
         "witch.jpg",
