@@ -39,6 +39,13 @@ class Weapon extends Item {
     }
 }
 
+class Potion extends Item {
+    constructor(name, heal) {
+        super(name)
+        this.heal = heal
+    }
+}
+
 class Boss {
     constructor(name, hp, atk, def, image) {
         
