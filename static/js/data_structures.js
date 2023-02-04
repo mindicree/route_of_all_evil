@@ -20,29 +20,31 @@ const ARMOR_TYPES = {
 }
 
 class Item {
-    constructor(name) {
+    constructor(name, image, level) {
         this.name = name
+        this.image = image
+        this.level = level
     }
 }
 
 class Armor extends Item{
-    constructor(name, type, def) {
-        super(name)
+    constructor(name, image, level, type, def) {
+        super(name, image, level)
         this.type = type
         this.def = def
     }
 }
 
 class Weapon extends Item {
-    constructor(name, atk) {
-        super(name)
+    constructor(name, image, level, atk) {
+        super(name, image, level)
         this.atk = atk
     }
 }
 
 class Potion extends Item {
-    constructor(name, heal) {
-        super(name)
+    constructor(name, image, level, heal) {
+        super(name, image, level)
         this.heal = heal
     }
 }
