@@ -20,6 +20,14 @@ function update_ui() {
     update_newitem()
 }
 
+function create_routes() {
+    current_routes = []
+    current_routes.push(new Route())
+    current_routes.push(new Route())
+    current_routes.push(new Route())
+    update_ui()
+}
+
 // initial views
 setTimeout(() => {
     game_screen_container.classList.remove('opacity-0')
