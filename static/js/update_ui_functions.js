@@ -1,7 +1,7 @@
 function update_intro() {
     
 }
-function update_route(new_routes=False) {
+function update_route() {
 
 }
 function update_merchant() {
