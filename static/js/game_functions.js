@@ -44,6 +44,24 @@ function create_event() {
     update_ui()
 }
 
+function event_choice(choice) {
+    let storyresult_image = document.querySelector('#storyresult_image')
+    let storyresult_title = document.querySelector('#storyresult_title')
+    let storyresult_text = document.querySelector('#storyresult_text')
+
+    storyresult_image.src = `/img/events/${current_story.image}`
+    storyresult_title.innerHTML = current_story.name
+
+    if (choice == 1) {
+        storyresult_text.innerHTML = current_story.choice_1_result
+        current_story.choice_1_function()
+    } else {
+        storyresult_text.innerHTML = current_story.choice_2_result
+        current_story.choice_2_function()
+    }
+    update_ui()
+}
+
 // initial views
 setTimeout(() => {
     game_screen_container.classList.remove('opacity-0')
