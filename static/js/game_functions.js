@@ -28,6 +28,17 @@ function create_routes() {
     update_ui()
 }
 
+function select_route(route_element) {
+    let route_choice = route_element.getAttribute('data-routetype')
+    console.log(route_choice)
+}
+
+function create_event() {
+    let event_selection = Matt.random() * events.length
+    current_story = events[event_selection]
+    update_ui()
+}
+
 // initial views
 setTimeout(() => {
     game_screen_container.classList.remove('opacity-0')
