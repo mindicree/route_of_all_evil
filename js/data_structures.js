@@ -31,7 +31,7 @@ class Weapon {
 }
 
 class Boss {
-    constructor(name, hp, atk, def) {
+    constructor(name, hp, atk, def, image) {
         
     }
 }
@@ -42,5 +42,22 @@ class Player {
         this.hp = hp
         this.atk = atk
         this.def = def
+
+        this.head_armor = head_armor
+        this.body_armor = body_armor
+        this.leg_armor = leg_armor
+    }
+}
+
+class Event {
+    constructor(name, text, choice_1_text, choice_2_text, choice_1_result, choice_2_result, choice_1_function, choice_2_function) {
+        this.name = name
+        this.text = text
+        this.choice_1_text = choice_1_text
+        this.choice_2_text = choice_2_text
+        this.choice_1_result = choice_1_result
+        this.choice_2_result = choice_2_result
+        this.choice_1_function = choice_1_function
+        this.choice_2_function = choice_2_function
     }
 }
