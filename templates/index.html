@@ -21,11 +21,18 @@
                     <h2 class="text-red-700 m-auto text-center text-6xl md:text-8xl">ROUTE OF ALL EVIL</h2>
                     <div></div>
                     <div class="grid mb-0 overflow-hidden">
-                        <h4 id="btn_home_start" class="text-red-700 m-auto text-center text-2xl md:text-4xl opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-110 xl:hover:cursor-pointer transition duration-100">START</h4>
-                        <h4 id="btn_home_continue" class="text-red-700 m-auto text-center text-2xl md:text-4xl opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-110 xl:hover:cursor-pointer transition duration-100">CONTINUE</h4>
+                        <h4 onclick="show_screen(screen_home, screen_intro)" id="btn_home_start" class="text-red-700 m-auto text-center text-2xl md:text-4xl opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-110 xl:hover:cursor-pointer transition duration-100">START</h4>
                         <h4 onclick="show_screen(screen_home, screen_tutorial)" id="btn_home_tutorial" class="text-red-700 m-auto text-center text-2xl md:text-4xl opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-110 xl:hover:cursor-pointer transition duration-100">HOW TO PLAY</h4>
+                        <h4 onclick="show_screen(screen_home, screen_credits)" id="btn_home_tutorial" class="text-red-700 m-auto text-center text-2xl md:text-4xl opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-110 xl:hover:cursor-pointer transition duration-100">CREDITS</h4>
                     </div>
                 </div>
+            </div>
+            <div id="screen_intro" class="opacity-0 inactive_screen">
+                <div class="m-auto w-5/6 max-w-[1024px] grid h-[90vh] md:h-[80vh]">
+                    <p class="text-red-700 m-auto text-center justify-between text-xl md:text-3xl uppercase">Virtues such as life are unexplained; Pastimes akin to friendships are no longer practiced; Obtaining power over what we fear, while admirable, is without satisfaction; The reason to be is naught; hence, the route of all evil is paved in our own slaughter, and the root of all evil is truly omniscient</p>
+                    <h4 onclick="show_screen(screen_intro, screen_route)" id="btn_home_tutorial" class="text-red-700 m-auto text-center text-2xl md:text-4xl opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-110 xl:hover:cursor-pointer transition duration-100">CONTINUE</h4>
+                </div>
+                
             </div>
             <div id="screen_route" class="opacity-0 inactive_screen">
     
@@ -50,6 +57,16 @@
             </div>
             <div id="screen_newitem" class="opacity-0 inactive_screen">
     
+            </div>
+            <div id="screen_credits" class="opacity-0 inactive_screen">
+                <div class="grid h-[50vh] m-auto">
+                    <p class="text-red-700 m-auto text-center justify-between text-2xl uppercase">
+                        Programming: Tyler Johnson<br>
+                        Music/SFX: Tyler Johnson<br>
+                        Artwork: Stable Diffusion
+                    </p>
+                    <h4 onclick="show_screen(screen_credits, screen_home)" id="btn_home_tutorial" class="text-red-700 m-auto text-center text-2xl md:text-4xl opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-110 xl:hover:cursor-pointer transition duration-100">RETURN</h4>
+                </div>
             </div>
             <div id="screen_tutorial" class="opacity-0 inactive_screen">
                 <div class="grid h-[95vh] mt-[2vh]">

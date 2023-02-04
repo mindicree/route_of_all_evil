@@ -649,6 +649,21 @@ video {
   line-height: 2rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -790,6 +805,10 @@ h1,h2,h3,h4,h5,h6,p {
     height: 50vh;
   }
 
+  .md\:h-\[80vh\] {
+    height: 80vh;
+  }
+
   .md\:overflow-auto {
     overflow: auto;
   }
@@ -802,6 +821,11 @@ h1,h2,h3,h4,h5,h6,p {
   .md\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 
@@ -820,6 +844,10 @@ h1,h2,h3,h4,h5,h6,p {
 
   .lg\:h-\[50vh\] {
     height: 50vh;
+  }
+
+  .lg\:h-\[80vh\] {
+    height: 80vh;
   }
 
   .lg\:w-1\/2 {
@@ -847,6 +875,11 @@ h1,h2,h3,h4,h5,h6,p {
 
   .xl\:h-\[60vh\] {
     height: 60vh;
+  }
+
+  .xl\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .xl\:opacity-75 {
