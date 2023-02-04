@@ -4,6 +4,7 @@ let current_enemy;
 let current_boss;
 let current_routes;
 
+// screen initializations
 let game_screen_container = document.querySelector('#game_screen_container')
 let screen_loading = document.querySelector('#screen_loading')
 let screen_home = document.querySelector('#screen_home')
