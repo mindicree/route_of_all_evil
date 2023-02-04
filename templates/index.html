@@ -37,15 +37,15 @@
                 <div class="h-[90vh] grid m-auto">
                     <h3 class="text-red-700 mx-auto my-auto text-center justify-between text-3xl md:text-5xl uppercase">Choose Your Route</h3>
                     <div class="grid m-auto md:grid-cols-3 gap-4 md:gap-8 w-full max-w-3xl">
-                        <div id="route_1_container" class="route_container grid gap-8 opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-105 xl:hover:cursor-pointer transition duration-100" data-routetype="filler">
+                        <div onclick="select_route(this)" id="route_1_container" class="route_container grid gap-8 opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-105 xl:hover:cursor-pointer transition duration-100" data-routetype="filler">
                             <img id="route_1_image" src="/img/routes/filler.jpg" alt="" class="m-auto w-1/4 md:w-3/4 lg:w-full rounded">
                             <h4 id="route_1_button" id="btn_home_tutorial" class="text-red-700 m-auto text-center text-xl md:text-4xl uppercase">Filler</h4>
                         </div>
-                        <div id="route_2_container" class="route_container grid gap-8 opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-105 xl:hover:cursor-pointer transition duration-100" data-routetype="filler">
+                        <div onclick="select_route(this)" id="route_2_container" class="route_container grid gap-8 opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-105 xl:hover:cursor-pointer transition duration-100" data-routetype="filler">
                             <img id="route_2_image" src="/img/routes/filler.jpg" alt="" class="m-auto w-1/4 md:w-3/4 lg:w-full rounded">
                             <h4 id="route_2_button" id="btn_home_tutorial" class="text-red-700 m-auto text-center text-xl md:text-4xl uppercase">Filler</h4>
                         </div>
-                        <div id="route_3_container" class="route_container grid gap-8 opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-105 xl:hover:cursor-pointer transition duration-100" data-routetype="filler">
+                        <div onclick="select_route(this)" id="route_3_container" class="route_container grid gap-8 opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-105 xl:hover:cursor-pointer transition duration-100" data-routetype="filler">
                             <img id="route_3_image" src="/img/routes/filler.jpg" alt="" class="m-auto w-1/4 md:w-3/4 lg:w-full rounded">
                             <h4 id="route_3_button" id="btn_home_tutorial" class="text-red-700 m-auto text-center text-xl md:text-4xl uppercase">Filler</h4>
                         </div>
@@ -56,7 +56,21 @@
     
             </div>
             <div id="screen_story" class="opacity-0 inactive_screen">
-    
+                <div class="h-[95vh] lg:h-[90vh] w-5/6 md:w-3/4 xl:w-1/2 grid m-auto">
+                    <img src="/img/routes/filler.jpg" alt="" class="m-auto w-1/2 max-w-[300px] rounded">
+                    <h3 class="text-red-700 mx-auto my-auto text-center justify-between text-2xl md:text-5xl uppercase">Filler</h3>
+                    <p class="text-red-700 m-auto text-center justify-between uppercase md:text-2xl">
+                        Virtues such as life are unexplained; Pastimes akin to friendships are no longer practiced; Obtaining power over what we fear, while admirable, is without satisfaction; The reason to be is naught; hence, the route of all evil is paved in our own slaughter, and the root of all evil is truly omniscient
+                    </p>
+                    <div class="grid grid-cols-2">
+                        <h3 onclick="event_choice(1)" class="text-red-700 ml-0 my-auto text-center justify-between text-2xl md:text-4xl uppercase opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-110 xl:hover:cursor-pointer transition duration-100">
+                            Attempt to help her
+                        </h3>
+                        <h3 onclick="event_choice(2)" class="text-red-700 mr-0 my-auto text-center justify-between text-2xl md:text-4xl uppercase opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-110 xl:hover:cursor-pointer transition duration-100">
+                            This looks too suspicious
+                        </h3>
+                    </div>
+                </div>
             </div>
             <div id="screen_storyresult" class="opacity-0 inactive_screen">
     

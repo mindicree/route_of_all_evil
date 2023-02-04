@@ -31,10 +31,15 @@ function create_routes() {
 function select_route(route_element) {
     let route_choice = route_element.getAttribute('data-routetype')
     console.log(route_choice)
+    switch (route_choice) {
+        case 'story':
+            create_event()
+            transition_screen(screen_route, screen_story)
+    }
 }
 
 function create_event() {
-    let event_selection = Matt.random() * events.length
+    let event_selection = Math.random() * events.length
     current_story = events[event_selection]
     update_ui()
 }
