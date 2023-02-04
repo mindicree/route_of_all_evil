@@ -11,7 +11,11 @@ let potions = [
 ]
 
 let enemies = [
-    new Enemy ("They That Speak", "they_that_speak.jpg", 20,3,7)
+    new Enemy ("Atamil, The Nightwalker", "they_that_speak.jpg", 20,3,7),
+    new Enemy ("They That Speak", "they_that_speak.jpg", 20,3,7),
+    new Enemy ("They That Speak", "they_that_speak.jpg", 20,3,7),
+    new Enemy ("They That Speak", "they_that_speak.jpg", 20,3,7),
+    new Enemy ("They That Speak", "they_that_speak.jpg", 20,3,7),
 ]
 
 let bosses = [
