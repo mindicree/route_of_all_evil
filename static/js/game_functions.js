@@ -20,14 +20,6 @@ function update_ui() {
     update_newitem()
 }
 
-function create_routes() {
-    current_routes = []
-    current_routes.push(new Route())
-    current_routes.push(new Route())
-    current_routes.push(new Route())
-    update_ui()
-}
-
 function select_route(route_element) {
     let route_choice = route_element.getAttribute('data-routetype')
     console.log(route_choice)
@@ -36,6 +28,14 @@ function select_route(route_element) {
             create_event()
             transition_screen(screen_route, screen_story)
     }
+}
+
+function create_routes() {
+    current_routes = []
+    current_routes.push(new Route())
+    current_routes.push(new Route())
+    current_routes.push(new Route())
+    update_ui()
 }
 
 function create_event() {
