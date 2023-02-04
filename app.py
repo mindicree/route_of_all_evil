@@ -10,5 +10,9 @@ def home():
 def get_font(font_name):
     return send_file(f'./fonts/{font_name}')
 
+@app.route('/img/<cat>/<image_name>')
+def get_image(cat, image_name):
+    return send_file(f'./static/img/{cat}/{image_name}')
+
 if __name__ == '__main__':
     app.run(debug=True)
