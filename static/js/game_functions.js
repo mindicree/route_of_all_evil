@@ -39,7 +39,7 @@ function select_route(route_element) {
 }
 
 function create_event() {
-    let event_selection = Math.random() * events.length
+    let event_selection = Math.floor(Math.random() * events.length)
     current_story = events[event_selection]
     update_ui()
 }

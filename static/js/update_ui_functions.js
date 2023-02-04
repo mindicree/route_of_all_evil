@@ -32,7 +32,19 @@ function update_merchant() {
     
 }
 function update_story() {
+    if (current_story) {
+        let story_title = document.querySelector('#story_title');
+        let story_text = document.querySelector('#story_text');
+        let story_image = document.querySelector('#story_image');
+        let story_choice_1 = document.querySelector('#story_choice_1');
+        let story_choice_2 = document.querySelector('#story_choice_2');
     
+        story_title.innerHTML = current_story.name
+        story_text.innerHTML = current_story.text
+        story_image.src = `/img/events/${current_story.image}`
+        story_choice_1.innerHTML = current_story.choice_1_text
+        story_choice_2.innerHTML = current_story.choice_2_text
+    }
 }
 function update_storyresult() {
     

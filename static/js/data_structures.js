@@ -81,6 +81,7 @@ class Player {
 class Event {
     constructor(name, image, text, choice_1_text, choice_2_text, choice_1_result, choice_2_result, choice_1_function, choice_2_function) {
         this.name = name
+        this.image = image
         this.text = text
         this.choice_1_text = choice_1_text
         this.choice_2_text = choice_2_text

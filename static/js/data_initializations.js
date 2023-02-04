@@ -37,7 +37,7 @@ let events = [
     new Event (
         "The Witch's Dilemna",
         "witchs_dilemna.jpg",
-        "Life has never been easy for these people. Many have burned by the hands of the previous generations. Their eradication, however, has had both positive and negative impact. In the present, however, the negatives are very prominent. \"Please sir, help me...\" she meekly says, outreaching a rotting hand in an almost zombie like fashion. ",
+        "Life has never been easy for these people. Many have burned by the hands of the previous generations. Their eradication, however, has had both positive and negative impact. In the present, however, the negatives are very prominent. \"Please, help me...\" she meekly says, outreaching a rotting hand in an almost zombie like fashion. She seems very weak.",
         "Attempt to help",
         "Ignore the potential danger",
         "You proceed to help her up by the hand. ",
