@@ -93,31 +93,39 @@ class Event {
 
 const ROUTE_DATA = {
     orb: {
-        image_url: '/img/routes/orb.jpg'
+        image_url: '/img/routes/orb.jpg',
+        display: 'Orb of Ancestors'
     },
     chest: {
-        image_url: '/img/routes/chest.jpg'
+        image_url: '/img/routes/chest.jpg',
+        display: 'Forgotten Treasure'
     },
     merchant: {
-        image_url: '/img/routes/merchant.jpg'
+        image_url: '/img/routes/merchant.jpg',
+        display: 'Lost Merchant'
     },
     combat: {
-        image_url: '/img/routes/combat.jpg'
+        image_url: '/img/routes/combat.jpg',
+        display: 'Mortal Combat'
     },
     story: {
-        image_url: '/img/routes/story.jpg'
+        image_url: '/img/routes/story.jpg',
+        display: 'Tales of Judgement'
     }
 }
 
 class Route {
     constructor() {
-        let route_choice
-        let route_gen = Math.floor(Math.random() * 100)
+        this.choice
 
-        if (route_gen < 5) route_choice = "orb"; // 0-4 (5%)
-        else if (route_gen < 15) route_choice = "chest"; // 5-14 (10%)
-        else if (route_gen < 30) route_choice = "merchant"; // 15-29 (15%)
-        else if (route_gen < 60) route_choice = "combat"; // 30-59 (30%)
-        else route_choice = "story"; // 60-99 (40%)
+        this.route_gen = Math.floor(Math.random() * 100)
+        if (this.route_gen < 5) choice = "orb"; // 0-4 (5%)
+        else if (this.route_gen < 15) choice = "chest"; // 5-14 (10%)
+        else if (this.route_gen < 30) choice = "merchant"; // 15-29 (15%)
+        else if (this.route_gen < 60) v = "combat"; // 30-59 (30%)
+        else choice = "story"; // 60-99 (40%)
+
+        this.image = ROUTE_DATA[choice]['image_url']
+        this.display = ROUTE_DATA[choice]['image_url']
     }
 }
