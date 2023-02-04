@@ -5,6 +5,8 @@ class Enemy {
         this.atk = atk
         this.def = def
         this.image = image
+
+        this.items = []
     }
 }
 
@@ -15,17 +17,24 @@ const ARMOR_TYPES = {
     BODY: 'body',
     LEG: 'leg'
 }
-class Armor {
-    constructor(type, name, def) {
-        this.type = type
-        this.def = def
+
+class Item {
+    constructor(name) {
         this.name = name
     }
 }
 
-class Weapon {
+class Armor extends Item{
+    constructor(name, type, def) {
+        super(name)
+        this.type = type
+        this.def = def
+    }
+}
+
+class Weapon extends Item {
     constructor(name, atk) {
-        this.name = name
+        super(name)
         this.atk = atk
     }
 }
