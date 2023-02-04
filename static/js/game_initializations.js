@@ -16,5 +16,6 @@ let screen_combat = document.querySelector('#screen_combat')
 let screen_boss = document.querySelector('#screen_boss')
 let screen_orb = document.querySelector('#screen_orb')
 let screen_newitem = document.querySelector('#screen_newitem')
+let screen_tutorial = document.querySelector('#screen_tutorial')
 
 let active_screen = screen_loading
