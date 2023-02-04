@@ -70,7 +70,7 @@ class Player {
 }
 
 class Event {
-    constructor(name, text, choice_1_text, choice_2_text, choice_1_result, choice_2_result, choice_1_function, choice_2_function) {
+    constructor(name, image, text, choice_1_text, choice_2_text, choice_1_result, choice_2_result, choice_1_function, choice_2_function) {
         this.name = name
         this.text = text
         this.choice_1_text = choice_1_text
