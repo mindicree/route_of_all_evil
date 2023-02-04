@@ -5,8 +5,6 @@ class Enemy {
         this.atk = atk
         this.def = def
         this.image = image
-
-        this.items = []
     }
 }
 
@@ -53,15 +51,19 @@ class Boss {
 }
 
 class Player {
-    constructor(name, hp, atk, def, head_armor, body_armor, leg_armor) {
+    constructor(name, hp, atk, def) {
         this.name = name
         this.hp = hp
         this.atk = atk
         this.def = def
 
-        this.head_armor = head_armor
-        this.body_armor = body_armor
-        this.leg_armor = leg_armor
+        this.items = []
+        this.current_head = null
+        this.current_body = null
+        this.current_leg = null
+        this.current_weapon = null
+
+        this.current_hp = this.hp
     }
 }
 
