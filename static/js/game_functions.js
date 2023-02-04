@@ -27,6 +27,9 @@ function select_route(route_element) {
         case 'story':
             create_event()
             transition_screen(screen_route, screen_story)
+        case 'combat':
+            create_enemy()
+            transition_screen(screen_route, screen_combat)
     }
 }
 
@@ -41,6 +44,12 @@ function create_routes() {
 function create_event() {
     let event_selection = Math.floor(Math.random() * events.length)
     current_story = events[event_selection]
+    update_ui()
+}
+
+function create_enemy() {
+    let enemy_selection = Math.floor(Math.random() * enemies.length)
+    current_enemy = enemies[enemy_selection]
     update_ui()
 }
 
