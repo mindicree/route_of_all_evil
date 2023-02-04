@@ -1,11 +1,13 @@
 class Enemy {
-    constructor(name, hp, atk, def, image) {
+    constructor(name, image, hp, atk, def) {
         this.name = name
         this.hp = hp
         this.atk = atk
         this.def = def
         this.image = image
         this.current_hp = hp
+
+        this.level = 1
     }
 }
 
