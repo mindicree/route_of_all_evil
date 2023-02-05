@@ -98,7 +98,8 @@ function combat_action(action) {
     // if hit, calc damage and apply
     if (action == 'ATTACK') {
         if (isHit()) {
-            damage_enemy()
+            let damage = calculate_damage(player.getCurrentAtk(), current_enemy.getCurrentDef())
+            damage_enemy(damage, isCrit())
         } else {
             miss_enemy()
         }
