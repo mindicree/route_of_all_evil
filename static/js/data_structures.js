@@ -8,6 +8,22 @@ class Enemy {
         this.current_hp = hp
         this.level = level
     }
+
+    getCurrentAtk() {
+        let current_stat = this.atk
+        for (let i = 0; i < this.level; i++) {
+            current_stat *= 1.1
+        }
+        return current_stat
+    }
+
+    getCurrentDef() {
+        let current_stat = this.def
+        for (let i = 0; i < this.level; i++) {
+            current_stat *= 1.1
+        }
+        return current_stat
+    }
 }
 
 const ITEM_TYPES = ['POTION', 'WEAPON', 'ARMOR']
