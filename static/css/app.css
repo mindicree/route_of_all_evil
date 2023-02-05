@@ -521,22 +521,6 @@ video {
   position: absolute;
 }
 
-.bottom-\[1vh\] {
-  bottom: 1vh;
-}
-
-.right-\[1vh\] {
-  right: 1vh;
-}
-
-.bottom-\[5vh\] {
-  bottom: 5vh;
-}
-
-.right-\[5vh\] {
-  right: 5vh;
-}
-
 .bottom-\[2vh\] {
   bottom: 2vh;
 }
@@ -567,10 +551,6 @@ video {
 
 .row-span-4 {
   grid-row: span 4 / span 4;
-}
-
-.row-span-6 {
-  grid-row: span 6 / span 6;
 }
 
 .m-auto {
@@ -613,10 +593,6 @@ video {
   margin-top: 2vh;
 }
 
-.mt-\[5vh\] {
-  margin-top: 5vh;
-}
-
 .grid {
   display: grid;
 }
@@ -653,16 +629,16 @@ video {
   height: 50;
 }
 
+.h-\[100vh\] {
+  height: 100vh;
+}
+
 .h-\[70vh\] {
   height: 70vh;
 }
 
 .h-\[75vh\] {
   height: 75vh;
-}
-
-.h-\[100vh\] {
-  height: 100vh;
 }
 
 .w-full {
@@ -703,22 +679,6 @@ video {
 
 .max-w-sm {
   max-width: 24rem;
-}
-
-.max-w-lg {
-  max-width: 32rem;
-}
-
-.max-w-\[500px\] {
-  max-width: 500px;
-}
-
-.max-w-\[100px\] {
-  max-width: 100px;
-}
-
-.max-w-\[600px\] {
-  max-width: 600px;
 }
 
 .grid-cols-2 {
@@ -807,8 +767,8 @@ video {
   line-height: 2rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
+.text-lg {
+  font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
@@ -817,13 +777,8 @@ video {
   line-height: 2.25rem;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
+.text-xl {
+  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
@@ -1175,6 +1130,11 @@ h1,h2,h3,h4,h5,h6,p {
     line-height: 2.5rem;
   }
 
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -1184,25 +1144,11 @@ h1,h2,h3,h4,h5,h6,p {
     font-size: 3rem;
     line-height: 1;
   }
-
-  .md\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  .md\:text-6xl {
-    font-size: 3.75rem;
-    line-height: 1;
-  }
 }
 
 @media (min-width: 1024px) {
   .lg\:h-\[90vh\] {
     height: 90vh;
-  }
-
-  .lg\:h-\[80\] {
-    height: 80;
   }
 
   .lg\:h-\[80vh\] {
@@ -1213,20 +1159,12 @@ h1,h2,h3,h4,h5,h6,p {
     width: 100%;
   }
 
-  .lg\:w-3\/4 {
-    width: 75%;
-  }
-
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1280px) {
-  .xl\:row-span-6 {
-    grid-row: span 6 / span 6;
-  }
-
   .xl\:my-auto {
     margin-top: auto;
     margin-bottom: auto;
@@ -1275,12 +1213,6 @@ h1,h2,h3,h4,h5,h6,p {
 
   .xl\:hover\:opacity-100:hover {
     opacity: 1;
-  }
-}
-
-@media (min-width: 1536px) {
-  .\32xl\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
   
