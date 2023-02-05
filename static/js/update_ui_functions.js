@@ -4,15 +4,15 @@ function update_intro() {
     if (ancestor && is_applied == false) {
         is_applied = true
         // generate bonuses
-        let hp_bonus = Math.floor((Math.random() * ancestor.hp)/10)
-        let atk_bonus = Math.floor((Math.random() * ancestor.hp)/10)
-        let def_bonus = Math.floor((Math.random() * ancestor.hp)/10)
-        let gold_bonus = (ancestor.gold ? Math.floor((Math.random() * ancestor.gold))/10 : 0)
+        let hp_bonus = Math.floor((Math.random() * ancestor.hp)/5)
+        let atk_bonus = Math.floor((Math.random() * ancestor.hp)/5)
+        let def_bonus = Math.floor((Math.random() * ancestor.hp)/5)
+        let gold_bonus = (ancestor.gold ? Math.floor((Math.random() * ancestor.gold))/5 : 0)
 
-        let head_bonus = (ancestor.current_head && Math.random() < 0.05 ? Object.assign(new Armor(), ancestor.current_head) : null)
-        let body_bonus = (ancestor.current_body && Math.random() < 0.05 ? Object.assign(new Armor(), ancestor.current_body) : null)
-        let leg_bonus = (ancestor.current_leg && Math.random() < 0.05 ? Object.assign(new Armor(), ancestor.current_leg) : null)
-        let weapon_bonus = (ancestor.current_weapon && Math.random() < 0.05 ? Object.assign(new Weapon(), ancestor.current_weapon) : null)
+        let head_bonus = (ancestor.current_head && Math.random() < 0.1 ? Object.assign(new Armor(), ancestor.current_head) : null)
+        let body_bonus = (ancestor.current_body && Math.random() < 0.1 ? Object.assign(new Armor(), ancestor.current_body) : null)
+        let leg_bonus = (ancestor.current_leg && Math.random() < 0.1 ? Object.assign(new Armor(), ancestor.current_leg) : null)
+        let weapon_bonus = (ancestor.current_weapon && Math.random() < 0.1 ? Object.assign(new Weapon(), ancestor.current_weapon) : null)
 
         // apply bonuses
         player.hp += hp_bonus

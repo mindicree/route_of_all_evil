@@ -2,7 +2,7 @@ let save_data = localStorage.getItem('save_data');
 save_data = JSON.parse(save_data)
 let is_applied = false;
 
-let player = (save_data && save_data['player'] ? Object.assign(new Player(), save_data['player']) : new Player("Gideon", 20, 10, 10));
+let player = (save_data && save_data['player'] ? Object.assign(new Player(), save_data['player']) : new Player("Gideon", 50, 10, 10));
 let player_history = (save_data && save_data['player_history'] ? save_data['player_history'] : []);
 let current_enemy = null
 let current_boss = null

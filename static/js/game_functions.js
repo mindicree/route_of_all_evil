@@ -437,7 +437,7 @@ function rebirth() {
     } else {
         new_name = name_request.responseText
     }
-    player = new Player(new_name, 25, 10, 10)
+    player = new Player(new_name, 50, 10, 10)
     current_level = 1
     is_applied = false
     save_to_local()
