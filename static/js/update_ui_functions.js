@@ -79,7 +79,7 @@ function update_route() {
     }
 }
 function update_merchant() {
-    
+    document.querySelector('#merchant_gold_amount').innerHTML = `${player.current_gold}GP`
 }
 function update_story() {
     if (current_story) {
@@ -176,7 +176,7 @@ function update_chest() {
             }
             newitem_title = `${new_item.name}, LV. ${new_item.level}`
         } else {
-            player.gold += new_item
+            player.current_gold += new_item
             newitem_title = `${new_item} GP`
             image_url = `/img/items/gold.jpg`
         }

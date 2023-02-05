@@ -103,6 +103,78 @@ function create_merchant() {
     update_ui()
 }
 
+function merchant_purchase(item) {
+    switch(item) {
+        case 'LESSER':
+            if (!isEnough(100)) {
+                showNotEnoughStatus()
+                return
+            } else {
+                player.current_gold -= 100
+                let heal = Math.floor(player.hp * 0.25)
+                player.current_hp += heal
+                if (player.current_hp > player.hp) player.current_hp = player.hp
+                showPurchaseStatus(`HP Has been restored (${player.current_hp}/${player.hp})`)
+                update_ui()
+            }
+            break;
+        case 'GREATER':
+            if (!isEnough(500)) {
+                showNotEnoughStatus()
+                return
+            } else {
+                player.current_gold -= 500
+                let heal = Math.floor(player.hp * 0.5)
+                player.current_hp += heal
+                if (player.current_hp > player.hp) player.current_hp = player.hp
+                showPurchaseStatus(`HP Has been restored (${player.current_hp}/${player.hp})`)
+                update_ui()
+            }
+            break;
+        case 'FULL':
+            if (!isEnough(1000)) {
+                showNotEnoughStatus()
+                return
+            } else {
+                player.current_gold -= 1000
+                player.current_hp += player.hp
+                showPurchaseStatus(`HP Has been restored (${player.current_hp}/${player.hp})`)
+                update_ui()
+            }
+            break;
+        case 'UPGRADE':
+            if (!isEnough(1000)) {
+                showNotEnoughStatus()
+                return
+            } else {
+
+            }
+            break;
+        default:
+            alert('Something went wrong with merchant_purchase: item not legal')
+    }
+}
+
+function isEnough(needed) {
+    return player.current_gold >= needed
+}
+
+function showNotEnoughStatus() {
+    let status_message = document.querySelector('#merchant_status')
+    status_message.classList.remove('damage_flash')
+    void status_message.offsetWidth
+    status_message.innerHTML = 'NOT ENOUGH GOLD'
+    status_message.classList.add('damage_flash')
+}
+
+function showPurchaseStatus(message) {
+    let status_message = document.querySelector('#merchant_status')
+    status_message.classList.remove('damage_flash')
+    void status_message.offsetWidth
+    status_message.innerHTML = message
+    status_message.classList.add('damage_flash')
+}
+
 function event_choice(choice) {
     let storyresult_image = document.querySelector('#storyresult_image')
     let storyresult_title = document.querySelector('#storyresult_title')
@@ -296,7 +368,7 @@ function combat_victory() {
     player.current_hp += hp_bonus
     player.atk += atk_bonus
     player.def += def_bonus
-    player.gold += gold_bonus
+    player.current_gold += gold_bonus
 
     // setup data based on changes
     document.querySelector('#combat_result_status').innerHTML = `${current_enemy.name} has been defeated`
