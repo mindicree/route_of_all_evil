@@ -163,9 +163,24 @@ function run_fail() {
 }
 
 function damage_enemy(dmg, is_crit) {
+    // get final damage calc
     if (is_crit) console.log('CRIT')
     let crit_mul = (is_crit ? Math.random()*0.5 + 1.5 : 1)
     let final_damage = Math.floor(dmg * crit_mul)
+
+    // apply damage to enemy
+    current_enemy.current_hp -= final_damage
+
+    // throw to UI
+    let combat_damage = document.querySelector('#combat_enemy_damage')
+    combat_damage.classList.remove('damage_flash')
+    void combat_damage.offsetWidth
+    combat_damage.innerHTML = `${(is_crit ? 'CRIT<br><br>' : '')}${final_damage}<br>DAMAGE`
+    combat_damage.classList.add('damage_flash')
+
+    // adjust health bar
+    let health_percent = Math.ceil((current_enemy.current_hp / current_enemy.getCurrentHpMax()) * 100)
+    document.querySelector('#combat_enemy_health_fill').style.width = `${health_percent}%`
 }
 
 function miss_enemy() {
