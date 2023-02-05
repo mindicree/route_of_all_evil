@@ -170,6 +170,14 @@ function game_over() {
     
 }
 
+function isDropGold() {
+
+}
+
+function isDropItem() {
+
+}
+
 function show_combat_interface(is_show) {
     let combat_interface = document.querySelector('#combat_interface')
     if (is_show) {
