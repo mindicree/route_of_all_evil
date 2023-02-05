@@ -1,5 +1,53 @@
 function update_intro() {
     document.querySelector('#rebirth_counter').innerHTML = player_history.length
+    let ancestor = player_history[player_history.length - 1]
+    if (ancestor && is_applied == false) {
+        is_applied = true
+        // generate bonuses
+        let hp_bonus = Math.floor((Math.random() * ancestor.hp)/10)
+        let atk_bonus = Math.floor((Math.random() * ancestor.hp)/10)
+        let def_bonus = Math.floor((Math.random() * ancestor.hp)/10)
+        let gold_bonus = (ancestor.gold ? Math.floor((Math.random() * ancestor.gold))/10 : 0)
+
+        let head_bonus = (ancestor.current_head && Math.random() < 0.05 ? Object.assign(new Armor(), ancestor.current_head) : null)
+        let body_bonus = (ancestor.current_body && Math.random() < 0.05 ? Object.assign(new Armor(), ancestor.current_body) : null)
+        let leg_bonus = (ancestor.current_leg && Math.random() < 0.05 ? Object.assign(new Armor(), ancestor.current_leg) : null)
+        let weapon_bonus = (ancestor.current_weapon && Math.random() < 0.05 ? Object.assign(new Weapon(), ancestor.current_weapon) : null)
+
+        // apply bonuses
+        player.hp += hp_bonus
+        player.current_hp += hp_bonus
+        player.atk += atk_bonus
+        player.def += def_bonus
+
+        player.current_head = head_bonus
+        player.current_body = body_bonus
+        player.current_leg = leg_bonus
+        player.current_weapon = weapon_bonus
+
+        console.log(player)
+
+        // create status message
+        let prelude = `${player.name}, you have been given favor by your ancestor, ${ancestor.name}, and his dedication to the family roots. Go forth with his gifts.<br><br>`
+        let bonuses = ''
+
+        bonuses += (hp_bonus > 0 ? `HP: <span class="text-white">+${hp_bonus}</span><br>` : '')
+        bonuses += (atk_bonus > 0 ? `ATK: <span class="text-white">+${atk_bonus}</span><br>` : '')
+        bonuses += (def_bonus > 0 ? `DEF: <span class="text-white">+${def_bonus}</span><br>` : '')
+        bonuses += (gold_bonus > 0 ? `GP: <span class="text-white">+${gold_bonus}</span><br>` : '')
+
+        bonuses += (head_bonus ? `HEAD: <span class="text-white">+${head_bonus.name}, LV. ${head_bonus.level}</span><br>` : '')
+        bonuses += (body_bonus ? `BODY: <span class="text-white">+${body_bonus.name}, LV. ${body_bonus.level}</span><br>` : '')
+        bonuses += (leg_bonus ? `LEG: <span class="text-white">+${leg_bonus.name}, LV. ${leg_bonus.level}</span><br>` : '')
+        bonuses += (weapon_bonus ? `WEAPON: <span class="text-white">+${weapon_bonus.name}, LV. ${weapon_bonus.level}</span><br>` : '')
+    
+        let final_message = (bonuses.length > 0 ? prelude + bonuses : '')
+
+        // update text in intro
+        document.querySelector('#ancestor_favor_message').innerHTML = final_message
+    } else {
+        document.querySelector('#ancestor_favor_message').innerHTML = ''
+    }
 }
 function update_route() {
     if (current_routes.length > 0) {
@@ -74,7 +122,7 @@ function update_combat() {
 
         combat_player_hp.innerHTML = player_hp
         combat_player_atk.innerHTML = player_atk
-        combat_player_def = player_def
+        combat_player_def.innerHTML = player_def
     }
 }
 function update_combatresult() {

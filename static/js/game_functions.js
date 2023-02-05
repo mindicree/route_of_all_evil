@@ -285,6 +285,7 @@ function rebirth() {
     transition_screen(screen_gameover, screen_loading)
     player = new Player("Gideon", 20, 10, 10)
     current_level = 1
+    is_applied = false
     save_to_local()
     update_ui()
     setTimeout(() => {
