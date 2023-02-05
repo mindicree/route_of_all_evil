@@ -183,11 +183,11 @@ class Route {
         this.route_type = ""
 
         this.route_gen = Math.floor(Math.random() * 100)
-        if (this.route_gen < 5) this.route_type = "orb"; // 0-4 (5%)
-        else if (this.route_gen < 15) this.route_type = "chest"; // 5-14 (10%)
-        else if (this.route_gen < 30) this.route_type = "merchant"; // 15-29 (15%)
-        else if (this.route_gen < 60) this.route_type = "combat"; // 30-59 (30%)
-        else this.route_type = "story"; // 60-99 (40%)
+        if (this.route_gen < 2) this.route_type = "orb"; // 0-1 (2%)
+        else if (this.route_gen < 10) this.route_type = "chest"; // 2-9 (8%)
+        else if (this.route_gen < 25) this.route_type = "merchant"; // 10-24 (15%)
+        else if (this.route_gen < 60) this.route_type = "combat"; // 25-59 (35%)
+        else this.route_type = "story"; // 60-99 (45%)
 
         this.image = ROUTE_DATA[this.route_type]['image_url']
         this.display = ROUTE_DATA[this.route_type]['display']
