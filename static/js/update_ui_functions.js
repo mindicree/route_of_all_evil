@@ -51,6 +51,7 @@ function update_storyresult() {
 }
 function update_combat() {
     if (current_enemy) {
+        document.querySelector('#combat_enemy_health_fill').style.width = '100%'
         let combat_enemy_name = document.querySelector('#combat_enemy_name')
         let combat_enemy_image = document.querySelector('#combat_enemy_image')
     
