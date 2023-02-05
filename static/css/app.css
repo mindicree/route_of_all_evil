@@ -604,20 +604,16 @@ video {
   height: 2vh;
 }
 
+.h-\[50\] {
+  height: 50;
+}
+
 .h-\[70vh\] {
   height: 70vh;
 }
 
 .h-\[75vh\] {
   height: 75vh;
-}
-
-.h-\[80\] {
-  height: 80;
-}
-
-.h-\[50\] {
-  height: 50;
 }
 
 .w-full {
@@ -752,11 +748,6 @@ video {
   line-height: 2.25rem;
 }
 
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 .uppercase {
   text-transform: uppercase;
 }
@@ -831,6 +822,24 @@ h1,h2,h3,h4,h5,h6,p {
   100% {
     display: hidden
   }
+}
+
+@keyframes flash_and_float {
+  from {
+    opacity: 1.0;
+    top: 20;
+  }
+
+  to {
+    opacity: 0.0;
+    top: 0
+  }
+}
+
+.damage_flash {
+  animation: flash_and_float;
+  animation-duration: 2.5s;
+  animation-fill-mode: forwards;
 }
 
 .active_screen {

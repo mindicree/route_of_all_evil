@@ -21,6 +21,16 @@ h1,h2,h3,h4,h5,h6,p {
     99% { opacity: 0.0}
     100% { display: hidden }
 }
+@keyframes flash_and_float {
+    from { opacity: 1.0; top: 20; }
+    to { opacity: 0.0; top: 0 }
+}
+
+.damage_flash {
+    animation: flash_and_float;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+}
 
 .active_screen {
     width: 100%;

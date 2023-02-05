@@ -151,7 +151,12 @@ function run_away() {
 }
 
 function run_fail() {
-
+    console.log('fail')
+    let combat_damage = document.querySelector('#combat_enemy_damage')
+    combat_damage.classList.remove('damage_flash')
+    void combat_damage.offsetWidth
+    combat_damage.innerHTML = 'Run<br>Failed'
+    combat_damage.classList.add('damage_flash')
 }
 
 function damage_enemy(dmg) {
