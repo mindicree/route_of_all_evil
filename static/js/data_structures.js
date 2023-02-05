@@ -20,7 +20,7 @@ class Enemy {
     getCurrentHpMax() {
         let current_stat = this.hp
         for (let i = 0; i < this.level; i++) {
-            current_stat *= 1.1
+            current_stat *= 1.05
         }
         return Math.floor(current_stat)
     }
@@ -28,7 +28,7 @@ class Enemy {
     getCurrentAtk() {
         let current_stat = this.atk
         for (let i = 0; i < this.level; i++) {
-            current_stat *= 1.1
+            current_stat *= 1.05
         }
         return Math.floor(current_stat)
     }
@@ -36,7 +36,7 @@ class Enemy {
     getCurrentDef() {
         let current_stat = this.def
         for (let i = 0; i < this.level; i++) {
-            current_stat *= 1.1
+            current_stat *= 1.05
         }
         return Math.floor(current_stat)
     }
