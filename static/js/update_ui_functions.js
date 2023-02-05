@@ -54,6 +54,7 @@ function update_combat() {
         document.querySelector('#combat_enemy_health_fill').style.width = '100%'
         let combat_enemy_name = document.querySelector('#combat_enemy_name')
         let combat_enemy_image = document.querySelector('#combat_enemy_image')
+        let combat_enemy_container = document.querySelector('#combat_enemy_container')
     
         let combat_player_hp = document.querySelector('#combat_player_hp')
         let combat_player_atk = document.querySelector('#combat_player_atk')
@@ -66,6 +67,9 @@ function update_combat() {
     
         combat_enemy_name.innerHTML = enemy_name
         combat_enemy_image.src = `/img/enemies/${current_enemy.image}`
+        combat_enemy_container.classList.remove('fade_out_med')
+        combat_enemy_container.style.opacity = 1.0
+
         combat_player_hp.innerHTML = player_hp
         combat_player_atk.innerHTML = player_atk
         combat_player_def = player_def
