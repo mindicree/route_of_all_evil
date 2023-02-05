@@ -99,6 +99,15 @@ function combat_action(action) {
 
 }
 
+function show_combat_interface(is_show) {
+    let combat_interface = document.querySelector('#combat_interface')
+    if (is_show) {
+        combat_interface.classList.remove('opacity-0')
+    } else {
+        combat_interface.classList.add('opacity-0')
+    }
+}
+
 // initial views
 setTimeout(() => {
     game_screen_container.classList.remove('opacity-0')
