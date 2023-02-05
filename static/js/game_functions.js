@@ -136,7 +136,7 @@ function isHit() {
 }
 
 function isRun() {
-    return Math.random() < 0.25
+    return Math.random() < 0.75
 }
 
 function isCrit() {
