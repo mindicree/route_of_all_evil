@@ -143,6 +143,9 @@ class Player {
 
         this.current_hp = hp
         this.current_gold = 0
+
+        this.enemies_defeated = []
+        this.bosses_defeated = []
     }
 
     getCurrentAtk() {
