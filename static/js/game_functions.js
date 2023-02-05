@@ -88,7 +88,7 @@ function combat_action(action) {
             run_away()
             return
         } else {
-            fail_run()
+            run_fail()
         }
     }
 
