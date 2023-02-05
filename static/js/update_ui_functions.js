@@ -131,7 +131,30 @@ function update_combatresult() {
 function update_boss() {
     
 }
+
 function update_orb() {
+    if (orb_ancestor) {
+        // create bonuses
+        let hp_bonus = Math.ceil(orb_ancestor.hp / (Math.random()*10 + 1))
+        let atk_bonus = Math.ceil(orb_ancestor.atk / (Math.random()*10 + 1))
+        let def_bonus = Math.ceil(orb_ancestor.def / (Math.random()*10 + 1))
+
+        // apply to player
+        player.hp += hp_bonus
+        player.current_hp += hp_bonus
+        player.atk += atk_bonus
+        player.def += def_bonus
+
+        // inform player
+        let message_1 = `Only those who trace back the roots that make up their being can truly understand the path in this twisted world. Wisdom comes to those who seek it, however this night is a rare exception. You are visited by your ancestor, ${orb_ancestor.name}, who bestows upon you the knowledge and experience gained in that lifetime, seemingly so far. These words are, indeed, the wisest. Take them to heart and share with the roots that follow in the future.`
+
+        document.querySelector('#orb_text').innerHTML = message_1
+        document.querySelector('#orb_text_hp').innerHTML = (hp_bonus > 0 ? `HP: <span class="text-white">+${hp_bonus}</span>` : '')
+        document.querySelector('#orb_text_atk').innerHTML = (atk_bonus > 0 ? `ATK: <span class="text-white">+${atk_bonus}</span>` : '')
+        document.querySelector('#orb_text_def').innerHTML = (def_bonus > 0 ? `DEF: <span class="text-white">+${def_bonus}</span>` : '')
+
+        orb_ancestor = null
+    }
     
 }
 function update_newitem() {

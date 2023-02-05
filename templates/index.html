@@ -153,7 +153,21 @@
     
             </div>
             <div id="screen_orb" class="opacity-0 inactive_screen">
-    
+                <div class="h-[95vh] lg:h-[90vh] w-5/6 md:w-3/4 xl:w-1/2 grid m-auto">
+                    <img id="orb_image" src="/img/routes/orb.jpg" alt="" class="m-auto w-1/2 max-w-[300px] rounded">
+                    <p id="orb_text" class="text-red-700 m-auto text-center justify-between uppercase md:text-2xl"></p>
+                    <div class="grid grid-cols-3 w-3/4">
+                        <p id="orb_text_hp" class="text-red-700 m-auto text-center justify-between uppercase md:text-2xl"></p>
+                        <p id="orb_text_atk" class="text-red-700 m-auto text-center justify-between uppercase md:text-2xl"></p>
+                        <p id="orb_text_def" class="text-red-700 m-auto text-center justify-between uppercase md:text-2xl"></p>
+                    </div>
+                    
+                    <div class="grid">
+                        <h3 id="orb_continue" onclick="create_routes();transition_screen(screen_orb, screen_route);" class="text-red-700 ml-0 my-auto text-center justify-between text-2xl md:text-4xl uppercase opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-110 xl:hover:cursor-pointer transition duration-100">
+                            Continue
+                        </h3>
+                    </div>
+                </div>
             </div>
             <div id="screen_newitem" class="opacity-0 inactive_screen">
     

@@ -11,6 +11,12 @@ class Enemy {
         this.current_hp = this.getCurrentHpMax()
     }
 
+    setLevel(new_level) {
+        this.level = new_level
+        this.hp = this.getCurrentHpMax()
+        this.current_hp = this.getCurrentHpMax()
+    }
+
     getCurrentHpMax() {
         let current_stat = this.hp
         for (let i = 0; i < this.level; i++) {

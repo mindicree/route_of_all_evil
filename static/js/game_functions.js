@@ -34,6 +34,10 @@ function select_route(route_element) {
             create_enemy()
             transition_screen(screen_route, screen_combat)
             break
+        case 'orb':
+            create_orb()
+            transition_screen(screen_route, screen_orb)
+            break
     }
 }
 
@@ -53,18 +57,14 @@ function create_event() {
 
 function create_enemy() {
     let enemy_selection = Math.floor(Math.random() * enemies.length)
-    current_enemy = enemies[enemy_selection]
-    current_enemy.hp = current_enemy.getCurrentHpMax()
-    current_enemy.current_hp = current_enemy.getCurrentHpMax()
-    current_enemy.level = Math.max(Math.floor(current_level + (Math.random()*10 - 5)), 1)
-    console.log(current_enemy)
+    current_enemy = Object.assign(new Enemy(), JSON.parse(JSON.stringify(enemies[enemy_selection])))
+    current_enemy.setLevel(Math.max(Math.floor(current_level + (Math.random()*10 - 5)), 1))
     update_ui()
 }
 
 function create_orb() {
-    orb_ancestor = player_history[Math.random() * player_history.length]
+    orb_ancestor = player_history[Number.parseInt(Math.random() * player_history.length)]
     update_ui()
-    transition_screen(screen_route, screen_orb)
 }
 
 function event_choice(choice) {
