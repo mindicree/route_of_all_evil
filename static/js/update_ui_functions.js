@@ -214,6 +214,11 @@ function update_orb() {
         document.querySelector('#orb_text_def').innerHTML = (def_bonus > 0 ? `DEF: <span class="text-white">+${def_bonus}</span>` : '')
 
         orb_ancestor = null
+    } else {
+        // inform player
+        let message_1 = `You walk closer to the orb. you feel an almost otherworldly feel from it. You don't know what this is, until you hear a voice that simply says. "This is not for you, ${player.name}; this is for you're the roots that you will engrain in this world". Almost like a calling, you understand it's purpose. The future just may be in good hands.`
+
+        document.querySelector('#orb_text').innerHTML = message_1
     }
     
 }
