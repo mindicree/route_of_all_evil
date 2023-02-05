@@ -90,11 +90,11 @@ let events = [
         () => {
             if (Math.random()*100 < 85) {
                 let outtext = document.querySelector('#storyresult_text')
-                player.current_gold += current_level * Math.random()*10
+                player.current_gold += Math.ceil(current_level * Math.random()*10)
                 outtext.innerHTML += 'Your good deeds are well recognized and <span class="text-white">you are even rewarded financially</span>. \"This world has seen so many things, but I\'m glad there are still those willing to try\" the witch says as she wanders off. What a thought.'
             } else {
                 let outtext = document.querySelector('#storyresult_text')
-                player.current_gold -= current_level * Math.random()*10
+                player.current_gold -= Math.ceil(current_level * Math.random()*10)
                 if (player.current_gold < 0) player.current_gold = 0;
                 outtext.innerHTML += 'Your good deeds are well recognized and the witch had many kind words to say, however, you can\'t help feel that <span class="text-white">you\'re coin pouch is just a bit lighter</span>. \"It helps so much to have people like you\" Of course it is...'
             }
