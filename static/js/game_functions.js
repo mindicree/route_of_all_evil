@@ -75,6 +75,30 @@ function event_choice(choice) {
     update_ui()
 }
 
+function combat_action(action) {
+    // hide interface
+
+    // if run, attempt to run
+
+    // if run successful, update ui, display, and return
+
+    // if attack check accuracy
+
+    // if hit, calc damage and apply
+
+    // if enemy dead, fade enemy out, update ui, transition
+
+    // enemy attack accuracy
+
+    // if hit, calc damage and apply
+
+    // if player dead transition to game over
+
+    // unhide interface
+
+
+}
+
 // initial views
 setTimeout(() => {
     game_screen_container.classList.remove('opacity-0')
