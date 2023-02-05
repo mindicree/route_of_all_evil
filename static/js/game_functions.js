@@ -61,6 +61,12 @@ function create_enemy() {
     update_ui()
 }
 
+function create_orb() {
+    orb_ancestor = player_history[Math.random() * player_history.length]
+    update_ui()
+    transition_screen(screen_route, screen_orb)
+}
+
 function event_choice(choice) {
     let storyresult_image = document.querySelector('#storyresult_image')
     let storyresult_title = document.querySelector('#storyresult_title')
