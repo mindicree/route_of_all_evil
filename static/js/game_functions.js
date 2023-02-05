@@ -128,7 +128,10 @@ function combat_action(action) {
 }
 
 function calculate_damage(atk, def) {
-    return Math.max(Math.floor((atk*5)/def), 1)
+    let variate = 1- Math.random()*0.2
+    let damage = ((atk*5)/def) * variate
+    damage = Math.max(Math.floor(damage), 1)
+    return damage
 }
 
 function isHit() {
