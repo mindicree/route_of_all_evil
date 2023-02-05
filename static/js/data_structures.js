@@ -33,6 +33,10 @@ class Enemy {
         }
         return Math.floor(current_stat)
     }
+
+    isDead() {
+        return this.current_hp <= 0
+    }
 }
 
 class Boss extends Enemy{
@@ -125,6 +129,10 @@ class Player {
         if (this.current_body) current_stat += this.current_body.getCurrentDef()
         if (this.current_leg) current_stat += this.current_leg.getCurrentDef()
         return Math.floor(current_stat)
+    }
+
+    isDead() {
+        return this.current_hp <= 0
     }
 }
 
