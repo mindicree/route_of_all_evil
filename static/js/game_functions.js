@@ -27,9 +27,11 @@ function select_route(route_element) {
         case 'story':
             create_event()
             transition_screen(screen_route, screen_story)
+            break
         case 'combat':
             create_enemy()
             transition_screen(screen_route, screen_combat)
+            break
     }
 }
 
