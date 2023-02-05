@@ -40,12 +40,16 @@ let enemies = [
     new Enemy ("It That Tells Of Psychoreal", "00021.jpg", 30,3,9,0.99),
     new Enemy ("L'Loigo", "00022.jpg", 45,10,15,0.75),
     new Enemy ("G'Lyeb, The Forest Watcher", "00023.jpg", 20,3,7,0.5),
-    new Enemy ("They That Speak", "00051.jpg", 150,1,3,0.1),
+    new Enemy ("They That Speak", "00051.jpg", 100,1,3,0.1),
     new Enemy ("Nioigon", "00055.jpg", 30,3,10,0.3)
 ]
 
 let bosses = [
-    new Boss ("Messenger of Ragnarok", "mor.jpg", 100, 10, 14)
+    new Boss ("Guamangrkath", "mor.jpg", 100, 150, 50),
+    new Boss ("Yithashaquoph", "mor.jpg", 200, 50, 50),
+    new Boss ("Fthil Yag-Tal", "mor.jpg", 75, 150, 70),
+    new Boss ("At-tstondeha", "mor.jpg", 50, 125, 125),
+    new Boss ("Azangarnoth", "mor.jpg", 200, 200, 100)
 ]
 
 let events = [
