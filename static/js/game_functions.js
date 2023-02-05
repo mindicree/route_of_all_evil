@@ -141,7 +141,7 @@ function isHit() {
 }
 
 function isRun() {
-    return Math.random() < 0.75
+    return Math.random() > current_enemy.run
 }
 
 function isCrit() {
