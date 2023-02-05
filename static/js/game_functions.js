@@ -17,6 +17,7 @@ function update_ui() {
     update_combatresult()
     update_boss()
     update_orb()
+    update_chest()
     update_newitem()
     show_combat_interface(true)
 }
