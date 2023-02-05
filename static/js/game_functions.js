@@ -85,9 +85,10 @@ function combat_action(action) {
 
     if (action == 'RUN') {
         if (isRun()) {
+            run_away()
             return
         } else {
-
+            fail_run()
         }
     }
 
@@ -96,7 +97,7 @@ function combat_action(action) {
     // if hit, calc damage and apply
     if (action == 'ATTACK') {
         if (isHit()) {
-
+            damage_enemy()
         } else {
 
         }
@@ -104,6 +105,7 @@ function combat_action(action) {
 
     // if enemy dead, fade enemy out, update ui, transition
     if (current_enemy.isDead()) {
+        combat_victory()
         return
     }
 
@@ -111,11 +113,12 @@ function combat_action(action) {
 
     // if hit, calc damage and apply
     if (isHit()) {
-
+        damage_player()
     }
 
     // if player dead transition to game over
     if (player.isDead()) {
+        game_over()
         return
     }
 
@@ -137,6 +140,30 @@ function isRun() {
 
 function isCrit() {
     return Math.random() < 0.1
+}
+
+function run_away() {
+
+}
+
+function run_fail() {
+
+}
+
+function damage_enemy(dmg) {
+
+}
+
+function damage_player(dmg) {
+
+}
+
+function combat_victory() {
+
+}
+
+function game_over() {
+    
 }
 
 function show_combat_interface(is_show) {
