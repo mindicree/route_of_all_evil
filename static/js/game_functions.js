@@ -77,26 +77,62 @@ function event_choice(choice) {
 
 function combat_action(action) {
     // hide interface
+    show_combat_interface(false)
 
     // if run, attempt to run
 
     // if run successful, update ui, display, and return
 
+    if (action == 'RUN') {
+        if (isRun()) {
+            return
+        } else {
+
+        }
+    }
+
     // if attack check accuracy
 
     // if hit, calc damage and apply
+    if (action == 'ATTACK') {
+        if (isHit()) {
+
+        } else {
+
+        }
+    }
 
     // if enemy dead, fade enemy out, update ui, transition
+    if (current_enemy.isDead()) {
+        return
+    }
 
     // enemy attack accuracy
 
     // if hit, calc damage and apply
+    if (isHit()) {
+
+    }
 
     // if player dead transition to game over
+    if (player.isDead()) {
+        return
+    }
 
     // unhide interface
+    show_combat_interface(true)
+}
 
+function calculate_damage(atk, def) {
+    return Math.max(Math.floor((atk*5)/def), 1)
+}
 
+function isHit() {
+    return Math.random() < 0.95
+}
+
+function isRun() {
+    return Math.random() < 0.25
 }
 
 function show_combat_interface(is_show) {
