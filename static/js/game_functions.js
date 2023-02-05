@@ -54,7 +54,7 @@ function create_event() {
 function create_enemy() {
     let enemy_selection = Math.floor(Math.random() * enemies.length)
     current_enemy = enemies[enemy_selection]
-    current_enemy.current_hp = current_enemy.hp
+    current_enemy.current_hp = current_enemy.getCurrentHpMax()
     current_enemy.level = Math.max(Math.floor(current_level + (Math.random()*10 - 5)), 1)
     console.log(current_enemy)
     update_ui()
