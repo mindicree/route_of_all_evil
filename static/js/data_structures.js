@@ -26,7 +26,7 @@ const ARMOR_TYPES = {
     LEG: 'leg'
 }
 class Armor extends Item {
-    constructor(name, image, type, def, level=1,) {
+    constructor(name, image, type, def, level=1) {
         super(name, image, level)
         this.type = type
         this.def = def
