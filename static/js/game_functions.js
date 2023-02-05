@@ -135,6 +135,10 @@ function isRun() {
     return Math.random() < 0.25
 }
 
+function isCrit() {
+    return Math.random() < 0.1
+}
+
 function show_combat_interface(is_show) {
     let combat_interface = document.querySelector('#combat_interface')
     if (is_show) {
