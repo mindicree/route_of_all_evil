@@ -1,11 +1,12 @@
 class Enemy {
-    constructor(name, image, hp, atk, def, level=1) {
+    constructor(name, image, hp, atk, def, run, level=1) {
         this.name = name
         this.hp = hp
         this.atk = atk
         this.def = def
         this.image = image
         this.level = level
+        this.run = run
 
         this.current_hp = this.getCurrentHpMax()
     }
@@ -41,7 +42,7 @@ class Enemy {
 
 class Boss extends Enemy{
     constructor(name, image, hp, atk, def, level=1) {
-        super(name, image, hp, atk, def, level)
+        super(name, image, hp, atk, def, 0.0, level)
     }
 }
 
