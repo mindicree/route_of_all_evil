@@ -62,10 +62,21 @@ let events = [
         "You drink the fluid with grace. ",
         "You hand the draught back to it's owner. He seems upset, but once again cracks a smile. \"Oh well, more for me\" as he finishes the rest in one gulp.",
         () => {
-            console.log('Choice 1!')
+            let result = Math.random() * 100
+            let outtext = document.querySelector('#storyresult_text')
+
+            if (result < 33) {
+                outtext.innerHTML += 'The odor is potent, but you wash it down. The odor worries you, but <span class="text-white">you dont seem to feel anything happening.<span class="text-white"> \"Aw, that sucks\" the artificer says as he continues on another.'
+            } else if (result < 95) {
+                player.current_hp = Math.floor(Math.min(player.hp, player.current_hp*1.1))
+                outtext.innerHTML += 'The odor is potent, but you wash it down. Suddenly you feel <span class="text-white">reguvenated with a bit of life</span>. \"Hey, not bad\" the artificer says, almost hoping for something else'
+            } else {
+                player.current_hp = Math.ceil(player.current_hp / 2)
+                outtext.innerHTML += 'The odor is potent, too potent in fact. After a few seconds of endurance, <span class="text-white">you hurl the concoction and what feels like your whole insides</span>, as the artificer just laughs. \"Hah, not bad! Let\'s do that again!\"'
+            }
         },
         () => {
-            console.log('Choice 2!')
+            
         }
     ),
     new Event (
