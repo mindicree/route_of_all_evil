@@ -191,7 +191,7 @@ const ROUTE_DATA = {
     },
     combat: {
         image_url: '/img/routes/combat.jpg',
-        display: 'Mortal Combat'
+        display: 'Fatal Engagement'
     },
     story: {
         image_url: '/img/routes/story.jpg',
