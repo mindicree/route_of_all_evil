@@ -31,12 +31,28 @@ class Armor extends Item {
         this.type = type
         this.def = def
     }
+
+    getCurrentDef() {
+        let current_stat = this.def
+        for (let i = 0; i < this.level; i++) {
+            current_stat *= 1.1
+        }
+        return current_stat
+    }
 }
 
 class Weapon extends Item {
     constructor(name, image, atk, level=1) {
         super(name, image, level)
         this.atk = atk
+    }
+
+    getCurrentAtk() {
+        let current_stat = this.atk
+        for (let i = 0; i < this.level; i++) {
+            current_stat *= 1.1
+        }
+        return current_stat
     }
 }
 
@@ -75,6 +91,22 @@ class Player {
 
         this.current_hp = hp
         this.current_gold = 0
+    }
+
+    getCurrentAtk() {
+        if (this.current_weapon) {
+            return this.atk + this.current_weapon.atk
+        } else {
+            return this.atk
+        }
+    }
+
+    getCurrentDef() {
+        let current_stat = this.def
+        if (this.current_head) current_stat += this.current_head.getCurrentDef()
+        if (this.current_body) current_stat += this.current_body.getCurrentDef()
+        if (this.current_leg) current_stat += this.current_leg.getCurrentDef()
+        return current_stat
     }
 }
 
