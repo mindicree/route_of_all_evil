@@ -132,6 +132,10 @@ function update_boss() {
     
 }
 
+function update_chest() {
+    
+}
+
 function update_orb() {
     if (orb_ancestor) {
         // create bonuses
