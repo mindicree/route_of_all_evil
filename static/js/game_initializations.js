@@ -8,7 +8,7 @@ let current_routes = (save_data ? save_data['current_routes'] : []);
 let current_story = (save_data ? save_data['current_story'] : null);
 let current_level = (save_data ? save_data['current_level'] : 1);
 let current_screen = (save_data ? save_data['current_screen'] : null);
-let bosses_defeated = (save_data ? save_data['bosses_defeated'] : 0);
+let bosses_defeated = (save_data ? save_data['bosses_defeated'] : []);
 
 // screen initializations
 let game_screen_container = document.querySelector('#game_screen_container')
