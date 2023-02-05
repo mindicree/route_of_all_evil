@@ -22,6 +22,9 @@ function update_ui() {
 }
 
 function select_route(route_element) {
+    if (current_level > 5 && Math.random() < 0.05) {
+        // boss interrupt
+    }
     let route_choice = route_element.getAttribute('data-routetype')
     current_level++;
     console.log(route_choice)
