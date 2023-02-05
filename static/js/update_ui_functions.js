@@ -141,12 +141,16 @@ function update_chest() {
             player.current_weapon = Object.assign(new Weapon(), JSON.parse(JSON.stringify(new_item)))
             switch (new_item.type) {
                 case WEAPON_TYPES.SWORD:
+                    image_url = `/img/items/swords.jpg`
                     break;
                 case WEAPON_TYPES.BOW:
+                    image_url = `/img/items/bows.jpg`
                     break;
                 case WEAPON_TYPES.DAGGER:
+                    image_url = `/img/items/daggers.jpg`
                     break;
                 case WEAPON_TYPES.GUN:
+                    image_url = `/img/items/guns.jpg`
                     break;
                 default:
                     alert('Something went wrong in update_chest: weapon type not valid')
@@ -155,12 +159,15 @@ function update_chest() {
         } else if (new_item instanceof Armor) {
             switch (new_item.type) {
                 case ARMOR_TYPES.HEAD:
+                    image_url = `/img/items/heads.jpg`
                     player.current_head = Object.assign(new Armor(), JSON.parse(JSON.stringify(new_item)))
                     break;
                 case ARMOR_TYPES.BODY:
+                    image_url = `/img/items/bodies.jpg`
                     player.current_body = Object.assign(new Armor(), JSON.parse(JSON.stringify(new_item)))
                     break;
                 case ARMOR_TYPES.LEG:
+                    image_url = `/img/items/legs.jpg`
                     player.current_leg = Object.assign(new Armor(), JSON.parse(JSON.stringify(new_item)))
                     break;
                 default:
@@ -171,11 +178,14 @@ function update_chest() {
         } else {
             player.gold += new_item
             newitem_title = `${new_item} GP`
+            image_url = `/img/items/gold.jpg`
         }
     
         new_item = null
         // provide layout
         document.querySelector('#newitem_title').innerHTML = newitem_title
+        document.querySelector('#newitem_image').src = image_url
+        fetch(image_url, {cache: 'reload', mode: 'no-cors'})
     }
 }
 
