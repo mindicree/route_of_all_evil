@@ -23,6 +23,7 @@ function update_ui() {
 
 function select_route(route_element) {
     let route_choice = route_element.getAttribute('data-routetype')
+    current_level++;
     console.log(route_choice)
     switch (route_choice) {
         case 'story':
