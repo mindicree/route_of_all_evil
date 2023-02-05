@@ -521,6 +521,18 @@ video {
   z-index: 50;
 }
 
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+.row-span-3 {
+  grid-row: span 3 / span 3;
+}
+
+.row-span-1 {
+  grid-row: span 1 / span 1;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -592,6 +604,22 @@ video {
   height: 75vh;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
+.h-\[1vh\] {
+  height: 1vh;
+}
+
+.h-\[4vh\] {
+  height: 4vh;
+}
+
+.h-\[2vh\] {
+  height: 2vh;
+}
+
 .w-full {
   width: 100%;
 }
@@ -624,8 +652,36 @@ video {
   max-width: 300px;
 }
 
+.max-w-xl {
+  max-width: 36rem;
+}
+
+.max-w-lg {
+  max-width: 32rem;
+}
+
+.max-w-sm {
+  max-width: 24rem;
+}
+
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-rows-4 {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
 }
 
 .justify-between {
@@ -652,9 +708,23 @@ video {
   border-radius: 0.25rem;
 }
 
+.border-2 {
+  border-width: 2px;
+}
+
+.border-red-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(185 28 28 / var(--tw-border-opacity));
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
 
 .text-center {
@@ -695,6 +765,11 @@ video {
   color: rgb(185 28 28 / var(--tw-text-opacity));
 }
 
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -709,6 +784,10 @@ video {
 
 .duration-100 {
   transition-duration: 100ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @font-face {
@@ -877,6 +956,14 @@ h1,h2,h3,h4,h5,h6,p {
   .lg\:w-full {
     width: 100%;
   }
+
+  .lg\:w-3\/4 {
+    width: 75%;
+  }
+
+  .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 1280px) {
@@ -887,6 +974,10 @@ h1,h2,h3,h4,h5,h6,p {
 
   .xl\:w-1\/2 {
     width: 50%;
+  }
+
+  .xl\:w-3\/4 {
+    width: 75%;
   }
 
   .xl\:text-4xl {
