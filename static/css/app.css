@@ -782,10 +782,6 @@ video {
   transition-duration: 150ms;
 }
 
-.duration-1000 {
-  transition-duration: 1000ms;
-}
-
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -837,6 +833,94 @@ h1,h2,h3,h4,h5,h6,p {
     opacity: 0.0;
     transform: translateY(-2vh)
   }
+}
+
+@keyframes shake_image_crit {
+  0% {
+    transform: translate(-2vh, -2vh);
+  }
+
+  13% {
+    transform: translate(0vh, 0vh);
+  }
+
+  25% {
+    transform: translate(2vh, 2vh);
+  }
+
+  37% {
+    transform: translate(0vh, 0vh);
+  }
+
+  50% {
+    transform: translate(1vh, -1vh);
+  }
+
+  63% {
+    transform: translate(0vh, 0vh);
+  }
+
+  75% {
+    transform: translate(-1vh, 1vh);
+  }
+
+  88% {
+    transform: translate(0vh, 0vh);
+  }
+
+  100% {
+    transform: translate(0vh, 0vh);
+  }
+}
+
+@keyframes shake_image {
+  0% {
+    transform: translate(-0.5vh, -0.5vh);
+  }
+
+  13% {
+    transform: translate(0vh, 0vh);
+  }
+
+  25% {
+    transform: translate(0.5vh, 0.5vh);
+  }
+
+  37% {
+    transform: translate(0vh, 0vh);
+  }
+
+  50% {
+    transform: translate(0.25vh, -0.25vh);
+  }
+
+  63% {
+    transform: translate(0vh, 0vh);
+  }
+
+  75% {
+    transform: translate(-0.25vh, 0.25vh);
+  }
+
+  88% {
+    transform: translate(0vh, 0vh);
+  }
+
+  100% {
+    transform: translate(0vh, 0vh);
+  }
+}
+
+.damage_shake {
+  animation: shake_image;
+  animation-duration: 0.25s;
+  animation-timing-function: linear;
+}
+
+.damage_shake_crit {
+  animation: shake_image_crit;
+  animation-duration: 0.25s;
+  animation-timing-function: linear;
 }
 
 .damage_flash {

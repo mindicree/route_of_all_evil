@@ -171,12 +171,20 @@ function damage_enemy(dmg, is_crit) {
     // apply damage to enemy
     current_enemy.current_hp -= final_damage
 
-    // throw to UI
+    // remove classes and trigger DOM refresh
     let combat_damage = document.querySelector('#combat_enemy_damage')
     combat_damage.classList.remove('damage_flash')
-    void combat_damage.offsetWidth
+    let combat_enemy_image = document.querySelector('#combat_enemy_image')
+    combat_enemy_image.classList.remove('damage_shake')
+    combat_enemy_image.classList.remove('damage_shake_crit')
+    void combat_enemy_image.offsetWidth
+
+    // flash damage
     combat_damage.innerHTML = `${(is_crit ? 'CRIT<br><br>' : '')}${final_damage}<br>DAMAGE`
     combat_damage.classList.add('damage_flash')
+
+    // shake image
+    combat_enemy_image.classList.add((is_crit ? 'damage_shake_crit' : 'damage_shake'))
 
     // adjust health bar
     let health_percent = (current_enemy.current_hp > 0 ? Math.ceil((current_enemy.current_hp / current_enemy.getCurrentHpMax()) * 100) : 0)
