@@ -88,7 +88,16 @@ let events = [
         "You proceed to help her up by the hand. ",
         "You continue on as if you heard nothing. Who knows what troubles could arise by helping those with unspeakable powers.",
         () => {
-            console.log('Choice 1!')
+            if (Math.random()*100 < 85) {
+                let outtext = document.querySelector('#storyresult_text')
+                player.current_gold += current_level * Math.random()*10
+                outtext += 'Your good deeds are well recognized and <span class="text-white">you are even rewarded financially</span>. \"This world has seen so many things, but I\'m glad there are still those willing to try\" the witch says as she wanders off. What a thought.'
+            } else {
+                let outtext = document.querySelector('#storyresult_text')
+                player.current_gold -= current_level * Math.random()*10
+                if (player.current_gold < 0) player.current_gold = 0;
+                outtext += 'Your good deeds are well recognized and the witch had many kind words to say, however, you can\'t help feel that <span class="text-white">you\'re coin pouch is just a bit lighter</span>. \"It helps so much to have people like you\" Of course it is...'
+            }
         },
         () => {
             console.log('Choice 2!')
@@ -100,13 +109,16 @@ let events = [
         "No matter how hard to try to shake the chains of mortality, it always finds a way to creep it's way into your life. Sometimes, it's not so bad. When the presence of The Apothecary's Weight enters your vision, there's almost a thought that mortality, and eventual death, may not be so bad.",
         "Rest a little bit",
         "Rest a little longer",
-        "You take rest at the unassuming refuge.",
-        "You take rest at the unassuming refuge.",
+        "You take rest at the unassuming refuge. After a good rest, <span class'text-white'>you're whole body feels refreshed. \"Come again!\" you hear from a familiar voice. The demand is almost not needed.</span>",
+        "You take rest at the unassuming refuge for an extended stay. You ponder the necessity of a lazy day, but only briefly as you <span class='text-white'>let your muscles loose for a needed relaxation</span> in this dreary world. ",
         () => {
-            console.log('Choice 1!')
+            player.hp += 5
+            player.current_hp = player.hp
         },
         () => {
-            console.log('Choice 2!')
+            player.hp = Math.floor(player.hp*1.5)
+            player.current_hp = player.hp
+            player.atk = Math.floor(player.atk * 0.85)
         }
     )
 ]
