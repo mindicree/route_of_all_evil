@@ -278,13 +278,18 @@ function get_gold_reward() {
 function game_over() {
     player_history.push(player)
     bosses_defeated = [];
-    save_to_local()
     transition_screen(screen_combat, screen_gameover)
 }
 
 function rebirth() {
+    transition_screen(screen_gameover, screen_loading)
     player = new Player("Gideon", 20, 10, 10)
     old_player = player_history[-1]
+    save_to_local()
+    update_ui()
+    setTimeout(() => {
+        transition_screen(screen_loading, screen_home)
+    }, 2000);
 }
 
 function save_to_local() {
@@ -293,7 +298,7 @@ function save_to_local() {
         'player_history': JSON.stringify(player_history)
     }
     console.log(new_save)
-    // localStorage.setItem('save_data', new_save)
+    localStorage.setItem('save_data', new_save)
 }
 
 function isDropGold() {
@@ -316,5 +321,6 @@ function show_combat_interface(is_show) {
 // initial views
 setTimeout(() => {
     game_screen_container.classList.remove('opacity-0')
+    update_ui()
     transition_screen(screen_loading, screen_home)
 }, 2000);

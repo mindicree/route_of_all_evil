@@ -16,7 +16,7 @@
             </div>
         </div>
         <div id="game_screen_container" class="opacity-0 grid">
-            <div id="screen_home" class="opacity-0 inactive_screen">
+            <div id="screen_home" class="opacity-0 inactive_screen grid">
                 <div class="w-3/4 grid m-auto h-[80vh]">
                     <h2 class="text-red-700 m-auto text-center text-6xl md:text-8xl">ROUTE OF ALL EVIL</h2>
                     <div></div>
@@ -26,6 +26,7 @@
                         <h4 onclick="transition_screen(screen_home, screen_credits)" id="btn_home_tutorial" class="text-red-700 m-auto text-center text-2xl md:text-4xl opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-110 xl:hover:cursor-pointer transition duration-100">CREDITS</h4>
                     </div>
                 </div>
+                <p class="text-red-700 absolute bottom-[2vh] right-[2vh] text-center justify-between text-lg md:text-2xl uppercase">Rebirths: <span id="rebirth_counter" class="text-white"></span></p>
             </div>
             <div id="screen_intro" class="opacity-0 inactive_screen">
                 <div class="m-auto w-5/6 max-w-[1024px] grid h-[90vh] md:h-[80vh]">
@@ -203,7 +204,7 @@
                             When time is the ultimate enemy, there are no words that matter; When space is the embodiment of despair, there is no mass that can hold its weight; When life is on its destined and ultimate trajectory, there is no force, no right, and no will that can possibly stop it. And yet, perhaps the roots of this prodigious tree are the true reason for being.
                         </p>
                     </div>
-                    <h3 onclick="" id="btn_rebirth" onclick="" class="text-red-700 mr-0 my-auto text-center justify-between text-2xl md:text-4xl uppercase opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-110 xl:hover:cursor-pointer transition duration-100">
+                    <h3 onclick="rebirth();" id="btn_rebirth" onclick="" class="text-red-700 mr-0 my-auto text-center justify-between text-2xl md:text-4xl uppercase opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-110 xl:hover:cursor-pointer transition duration-100">
                         Rebirth
                     </h3>
                 </div>

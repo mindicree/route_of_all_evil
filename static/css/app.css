@@ -517,6 +517,34 @@ video {
   position: static;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.bottom-\[1vh\] {
+  bottom: 1vh;
+}
+
+.right-\[1vh\] {
+  right: 1vh;
+}
+
+.bottom-\[5vh\] {
+  bottom: 5vh;
+}
+
+.right-\[5vh\] {
+  right: 5vh;
+}
+
+.bottom-\[2vh\] {
+  bottom: 2vh;
+}
+
+.right-\[2vh\] {
+  right: 2vh;
+}
+
 .z-50 {
   z-index: 50;
 }
