@@ -56,7 +56,7 @@ class Boss extends Enemy{
     }
 }
 
-const ITEM_TYPES = ['POTION', 'WEAPON', 'ARMOR']
+const ITEM_TYPES = ['WEAPON', 'ARMOR']
 
 class Item {
     constructor(name, level=1) {
