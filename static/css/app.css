@@ -556,6 +556,11 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -570,6 +575,10 @@ video {
 
 .mt-\[2vh\] {
   margin-top: 2vh;
+}
+
+.mt-\[5vh\] {
+  margin-top: 5vh;
 }
 
 .grid {
@@ -654,6 +663,18 @@ video {
 
 .max-w-sm {
   max-width: 24rem;
+}
+
+.max-w-lg {
+  max-width: 32rem;
+}
+
+.max-w-\[500px\] {
+  max-width: 500px;
+}
+
+.max-w-\[100px\] {
+  max-width: 100px;
 }
 
 .grid-cols-2 {
@@ -746,6 +767,21 @@ video {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .uppercase {
@@ -1049,6 +1085,10 @@ h1,h2,h3,h4,h5,h6,p {
 }
 
 @media (min-width: 768px) {
+  .md\:mt-\[5vh\] {
+    margin-top: 5vh;
+  }
+
   .md\:h-\[80vh\] {
     height: 80vh;
   }
@@ -1092,6 +1132,11 @@ h1,h2,h3,h4,h5,h6,p {
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
   }
 }
 
