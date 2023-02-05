@@ -118,7 +118,8 @@ function combat_action(action) {
 
     // if hit, calc damage and apply
     if (isHit()) {
-        damage_player()
+        let damage = calculate_damage(current_enemy.getCurrentAtk(), player.getCurrentDef())
+        damage_player(damage, isCrit())
     } else {
         miss_player()
     }
@@ -204,11 +205,35 @@ function miss_enemy() {
 }
 
 function miss_player() {
-    
+    let combat_damage = document.querySelector('#combat_player_damage')
+    combat_damage.classList.remove('damage_flash')
+    void combat_damage.offsetWidth
+    combat_damage.innerHTML = 'MISSED'
+    combat_damage.classList.add('damage_flash')
 }
 
-function damage_player(dmg) {
+function damage_player(dmg, is_crit) {
+    // get final damage calc
+    if (is_crit) console.log('CRIT')
+    let crit_mul = (is_crit ? Math.random()*0.5 + 1.5 : 1)
+    let final_damage = Math.floor(dmg * crit_mul)
 
+    // apply damage to enemy
+    player.current_hp -= final_damage
+
+    // remove classes and trigger DOM refresh
+    let combat_damage = document.querySelector('#combat_player_damage')
+    combat_damage.classList.remove('damage_flash')
+    void combat_damage.offsetWidth
+
+    // flash screen red
+
+    // flash damage
+    combat_damage.innerHTML = `${(is_crit ? 'CRIT<br><br>' : '')}${final_damage}<br>DAMAGE`
+    combat_damage.classList.add('damage_flash')
+
+    // adjust health meter
+    document.querySelector('#combat_player_hp').innerHTML = `${player.current_hp}/${player.hp}`
 }
 
 function combat_victory() {
@@ -251,7 +276,30 @@ function get_gold_reward() {
 }
 
 function game_over() {
+    player_history.push(player)
+    bosses_defeated = [];
+    save_to_local()
+    transition_screen(screen_combat, screen_gameover)
+}
+
+function rebirth() {
     
+}
+
+function save_to_local() {
+    let new_save = {
+        'player': JSON.stringify(player),
+        'player_history': JSON.stringify(player_history),
+        'current_enemy': JSON.stringify(current_enemy),
+        'current_boss': JSON.stringify(current_boss),
+        'current_routes': JSON.stringify(current_routes),
+        'current_story': JSON.stringify(current_story),
+        'current_level': JSON.stringify(current_level),
+        'current_screen': JSON.stringify(current_screen),
+        'bosses_defeated': JSON.stringify(bosses_defeated)
+    }
+    console.log(new_save)
+    // localStorage.setItem('save_data', new_save)
 }
 
 function isDropGold() {
