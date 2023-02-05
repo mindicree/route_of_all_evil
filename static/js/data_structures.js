@@ -94,6 +94,12 @@ class Armor extends Item {
     }
 }
 
+const WEAPON_TYPES = {
+    SWORD: 'sword',
+    BOW: 'bow',
+    DAGGER: 'dagger',
+    GUN: 'gun'
+}
 class Weapon extends Item {
     constructor(name, atk, level=1) {
         super(name, level)
