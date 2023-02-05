@@ -284,7 +284,6 @@ function game_over() {
 function rebirth() {
     transition_screen(screen_gameover, screen_loading)
     player = new Player("Gideon", 20, 10, 10)
-    old_player = player_history[-1]
     save_to_local()
     update_ui()
     setTimeout(() => {
