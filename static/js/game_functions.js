@@ -46,6 +46,10 @@ function select_route(route_element) {
             create_chest()
             transition_screen(screen_route, screen_chest)
             break
+        case 'merchant':
+            create_merchant()
+            transition_screen(screen_route, screen_merchant)
+            break
     }
 }
 
@@ -92,6 +96,10 @@ function create_chest() {
     } else {
         new_item = Math.ceil(Math.random() * Math.pow(current_level, 1.1) + 50)
     }
+    update_ui()
+}
+
+function create_merchant() {
     update_ui()
 }
 
