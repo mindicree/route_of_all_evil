@@ -161,8 +161,10 @@ function run_fail() {
     combat_damage.classList.add('damage_flash')
 }
 
-function damage_enemy(dmg) {
-
+function damage_enemy(dmg, is_crit) {
+    if (is_crit) console.log('CRIT')
+    let crit_mul = (is_crit ? Math.random()*0.5 + 1.5 : 1)
+    let final_damage = Math.floor(dmg * crit_mul)
 }
 
 function miss_enemy() {
