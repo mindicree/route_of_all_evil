@@ -207,7 +207,10 @@ function damage_player(dmg) {
 }
 
 function combat_victory() {
-
+    let enemy_container = document.querySelector('#combat_enemy_container')
+    enemy_container.classList.remove('fade_out_med')
+    void enemy_container.offsetWidth
+    enemy_container.classList.add('fade_out_med')
 }
 
 function game_over() {

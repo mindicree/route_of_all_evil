@@ -911,6 +911,51 @@ h1,h2,h3,h4,h5,h6,p {
   }
 }
 
+@keyframes fade_out {
+  from {
+    opacity: 1.0;
+  }
+
+  to {
+    opacity: 0.0;
+  }
+}
+
+.fade_out_very_slow {
+  animation: fade_out;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.fade_out_slow {
+  animation: fade_out;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.fade_out_med {
+  animation: fade_out;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.fade_out_fast {
+  animation: fade_out;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.fade_out_very_fast {
+  animation: fade_out;
+  animation-duration: 0.25s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
 .damage_shake {
   animation: shake_image;
   animation-duration: 0.25s;
