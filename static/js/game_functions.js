@@ -283,20 +283,14 @@ function game_over() {
 }
 
 function rebirth() {
-    
+    player = new Player("Gideon", 20, 10, 10)
+    old_player = player_history[-1]
 }
 
 function save_to_local() {
     let new_save = {
         'player': JSON.stringify(player),
-        'player_history': JSON.stringify(player_history),
-        'current_enemy': JSON.stringify(current_enemy),
-        'current_boss': JSON.stringify(current_boss),
-        'current_routes': JSON.stringify(current_routes),
-        'current_story': JSON.stringify(current_story),
-        'current_level': JSON.stringify(current_level),
-        'current_screen': JSON.stringify(current_screen),
-        'bosses_defeated': JSON.stringify(bosses_defeated)
+        'player_history': JSON.stringify(player_history)
     }
     console.log(new_save)
     // localStorage.setItem('save_data', new_save)
