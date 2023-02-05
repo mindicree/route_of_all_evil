@@ -5,17 +5,17 @@ let weapons = [
 let armor_common = [
     new Armor("Rogue's Hood", ARMOR_TYPES.HEAD, 3),
     new Armor("Rogue's Cloak", ARMOR_TYPES.BODY, 3),
-    new Armor("Rogue's Pads", ARMOR_TYPES.LEGS, 3)
+    new Armor("Rogue's Pads", ARMOR_TYPES.LEG, 3)
 ]
 let armor_uncommon = [
     new Armor("Knight's Helmet", ARMOR_TYPES.HEAD, 5),
     new Armor("Knight's Armor", ARMOR_TYPES.BODY, 5),
-    new Armor("Knight's Kilt", ARMOR_TYPES.LEGS, 5)
+    new Armor("Knight's Kilt", ARMOR_TYPES.LEG, 5)
 ]
 let armor_rare = [
     new Armor("Red Dragon Scale Helmet", ARMOR_TYPES.HEAD, 9),
     new Armor("Red Dragon Scale Hide", ARMOR_TYPES.BODY, 9),
-    new Armor("Red Dragon Scale Boots", ARMOR_TYPES.LEGS, 9)
+    new Armor("Red Dragon Scale Boots", ARMOR_TYPES.LEG, 9)
 ]
 
 let weapon_common = [
