@@ -545,6 +545,10 @@ video {
   right: 2vh;
 }
 
+.left-\[2vh\] {
+  left: 2vh;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -1207,6 +1211,10 @@ h1,h2,h3,h4,h5,h6,p {
 
   .xl\:opacity-75 {
     opacity: 0.75;
+  }
+
+  .xl\:opacity-50 {
+    opacity: 0.5;
   }
 
   .xl\:hover\:scale-110:hover {

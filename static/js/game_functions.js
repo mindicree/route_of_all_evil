@@ -325,6 +325,14 @@ function show_combat_interface(is_show) {
     }
 }
 
+function reset_game() {
+    let will_reset = confirm('WARNING! Resetting the game will delete you progress. Are you sure you want to do this?')
+    if (will_reset) {
+        localStorage.clear()
+        location.reload()
+    }
+}
+
 // initial views
 setTimeout(() => {
     game_screen_container.classList.remove('opacity-0')
