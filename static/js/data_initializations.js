@@ -2,12 +2,35 @@ let weapons = [
     new Weapon("Sword of Ill Will", "soiw.jpg", 6)
 ]
 
-let armors = [
-    new Armor("Helmet of Hermos", "hoh.jpg", ARMOR_TYPES.HEAD, 5)
+let armor_common = [
+    new Armor("Rogue's Hood", ARMOR_TYPES.HEAD, 3),
+    new Armor("Rogue's Cloak", ARMOR_TYPES.BODY, 3),
+    new Armor("Rogue's Pads", ARMOR_TYPES.LEGS, 3)
+]
+let armor_uncommon = [
+    new Armor("Knight's Helmet", ARMOR_TYPES.HEAD, 5),
+    new Armor("Knight's Armor", ARMOR_TYPES.BODY, 5),
+    new Armor("Knight's Kilt", ARMOR_TYPES.LEGS, 5)
+]
+let armor_rare = [
+    new Armor("Red Dragon Scale Helmet", ARMOR_TYPES.HEAD, 9),
+    new Armor("Red Dragon Scale Hide", ARMOR_TYPES.BODY, 9),
+    new Armor("Red Dragon Scale Boots", ARMOR_TYPES.LEGS, 9)
 ]
 
-let potions = [
-    new Potion("Potion of Lesser Healing", "plh", 0.25)
+let weapon_common = [
+    new Weapon("Short Sword", WEAPON_TYPES.SWORD, 3),
+    new Weapon("Short Bow", WEAPON_TYPES.BOW, 3),
+    new Weapon("Hunting Dagger", WEAPON_TYPES.DAGGER, 3)
+]
+let weapon_uncommon = [
+    new Weapon("Long Sword", WEAPON_TYPES.SWORD, 5),
+    new Weapon("Long Bow", WEAPON_TYPES.BOW, 5),
+    new Weapon("Washington's Pistol", WEAPON_TYPES.GUN, 5)
+]
+let weapon_rare = [
+    new Weapon("Excalibur", WEAPON_TYPES.SWORD, 9),
+    new Weapon("RH Deagle", WEAPON_TYPES.GUN, 9)
 ]
 
 let enemies = [
