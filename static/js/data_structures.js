@@ -213,7 +213,7 @@ class Route {
         this.route_gen = Math.floor(Math.random() * 100)
         if (this.route_gen < 2) this.route_type = "orb"; // 0-1 (2%)
         else if (this.route_gen < 10) this.route_type = "chest"; // 2-9 (8%)
-        else if (this.route_gen < 50) this.route_type = "merchant"; // 10-24 (15%)
+        else if (this.route_gen < 25) this.route_type = "merchant"; // 10-24 (15%)
         else if (this.route_gen < 60) this.route_type = "combat"; // 25-59 (35%)
         else this.route_type = "story"; // 60-99 (45%)
 
