@@ -1,7 +1,7 @@
 let save_data = localStorage.getItem('save_data');
 
-let player = (save_data ? save_data['player'] : new Player("Gideon", 20, 10, 10));
-let player_history = (save_data ? save_data['player_history'] : []);
+let player = (save_data['player'] ? save_data['player'] : new Player("Gideon", 20, 10, 10));
+let player_history = (save_data['player_history'] ? save_data['player_history'] : []);
 let current_enemy = null
 let current_boss = null
 let current_routes = []
