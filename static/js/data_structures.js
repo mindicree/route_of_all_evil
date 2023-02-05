@@ -63,6 +63,10 @@ class Item {
         this.name = name
         this.level = level
     }
+
+    level_up(amount) {
+        this.level += amount
+    }
 }
 
 const ARMOR_TYPES = {

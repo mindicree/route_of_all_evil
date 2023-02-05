@@ -147,7 +147,13 @@ function merchant_purchase(item) {
                 showNotEnoughStatus()
                 return
             } else {
-
+                player.current_gold -= 1000
+                if (player.current_weapon) current_weapon.level_up(2)
+                if (player.current_head) current_head.level_up(2)
+                if (player.current_body) current_body.level_up(2)
+                if (player.current_leg) current_leg.level_up(2)
+                showPurchaseStatus(`Items have been upgraded by 2 levels!`)
+                update_ui()
             }
             break;
         default:
