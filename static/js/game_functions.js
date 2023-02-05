@@ -144,7 +144,10 @@ function isCrit() {
 }
 
 function run_away() {
-
+    document.querySelector('#combat_result_status').innerHTML = 'You ran away successfully'
+    document.querySelector('#combat_result_details').innerHTML = 'This battle is not worth fighting'
+    update_ui()
+    transition_screen(screen_combat, screen_combatresult)
 }
 
 function run_fail() {
