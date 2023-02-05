@@ -93,7 +93,15 @@
                 </div>
             </div>
             <div id="screen_chest" class="opacity-0 inactive_screen">
-    
+                <div class="h-[95vh] lg:h-[90vh] w-5/6 md:w-3/4 xl:w-1/2 grid m-auto">
+                    <img id="chest_image" src="/img/routes/chest.jpg" alt="" class="m-auto w-1/2 max-w-[300px] rounded">
+                    <p id="chest_test" class="text-red-700 m-auto text-center justify-between uppercase md:text-2xl">Fortune is not unbecoming of the meek, however, it is also not unheard of to the wicked and greedy. In both cases, fortune is a rarity, and in neither case, is it appreciated.</p>
+                    <div class="grid">
+                        <h3 id="orb_continue" onclick="transition_screen(screen_chest, screen_newitem);" class="text-red-700 ml-0 my-auto text-center justify-between text-2xl md:text-4xl uppercase opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-110 xl:hover:cursor-pointer transition duration-100">
+                            Open
+                        </h3>
+                    </div>
+                </div>
             </div>
             <div id="screen_combat" class="opacity-0 inactive_screen">
                 <div class="grid h-[90vh] grid-rows-4 w-5/6 xl:w-3/4 max-w-xl m-auto">
@@ -171,7 +179,16 @@
                 </div>
             </div>
             <div id="screen_newitem" class="opacity-0 inactive_screen">
-    
+                <div class="h-[95vh] lg:h-[90vh] w-5/6 md:w-3/4 xl:w-1/2 grid m-auto">
+                    <img id="newitem_image" src="/img/routes/filler.jpg" alt="" class="m-auto w-1/2 max-w-[300px] rounded">
+                    <h3 id="story_title" class="text-red-700 mx-auto my-auto text-center justify-between text-2xl md:text-5xl uppercase">Filler</h3>
+                    <p id="newitem_text" class="text-red-700 m-auto text-center justify-between uppercase md:text-2xl">This item is now equipped</p>
+                    <div class="grid">
+                        <h3 id="newitem_continue" onclick="create_routes();transition_screen(screen_chest, screen_newitem);" class="text-red-700 ml-0 my-auto text-center justify-between text-2xl md:text-4xl uppercase opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-110 xl:hover:cursor-pointer transition duration-100">
+                            Continue
+                        </h3>
+                    </div>
+                </div>
             </div>
             <div id="screen_credits" class="opacity-0 inactive_screen">
                 <div class="grid h-[70vh] m-auto">

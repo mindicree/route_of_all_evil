@@ -41,6 +41,10 @@ function select_route(route_element) {
             create_orb()
             transition_screen(screen_route, screen_orb)
             break
+        case 'chest':
+            create_chest()
+            transition_screen(screen_route, screen_chest)
+            break
     }
 }
 
@@ -61,12 +65,32 @@ function create_event() {
 function create_enemy() {
     let enemy_selection = Math.floor(Math.random() * enemies.length)
     current_enemy = Object.assign(new Enemy(), JSON.parse(JSON.stringify(enemies[enemy_selection])))
-    current_enemy.setLevel(Math.max(Math.floor(current_level + (Math.random()*10 - 5)), 1))
+    current_enemy.setLevel(get_new_level())
     update_ui()
 }
 
 function create_orb() {
     orb_ancestor = player_history[Number.parseInt(Math.random() * player_history.length)]
+    update_ui()
+}
+
+function get_new_level(r=5) {
+    return Math.max(Math.floor(current_level + (Math.random()*(r*2) - r)), 1)
+}
+
+function create_chest() {
+    let reward_select = Math.random() * 100
+    if (reward_select < 33) {
+        reward_select = Math.floor(Math.random()*weapon_rare.length)
+        new_item = Object.assign(new Weapon(), JSON.parse(JSON.stringify(weapon_rare[reward_select])))
+        new_item.setLevel(get_new_level(3))
+    } else if (reward_select < 66) {
+        reward_select = Math.floor(Math.random()*armor_rare.length)
+        new_item = Object.assign(new Armor(), JSON.parse(JSON.stringify(armor_rare[reward_select])))
+        new_item.setLevel(get_new_level(3))
+    } else {
+        new_item = Math.ceil(Math.random() * Math.pow(current_level, 1.1) + 50)
+    }
     update_ui()
 }
 
