@@ -85,6 +85,14 @@ class Armor extends Item {
         }
         return Math.floor(current_stat)
     }
+
+    setLevel(level) {
+        this.level = level
+    }
+
+    getPrice() {
+        return this.level * this.atk
+    }
 }
 
 class Weapon extends Item {
@@ -99,6 +107,14 @@ class Weapon extends Item {
             current_stat *= 1.1
         }
         return Math.floor(current_stat)
+    }
+
+    setLevel(level) {
+        this.level = level
+    }
+
+    getPrice() {
+        return this.level * this.atk
     }
 }
 
