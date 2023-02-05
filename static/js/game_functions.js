@@ -18,6 +18,7 @@ function update_ui() {
     update_boss()
     update_orb()
     update_newitem()
+    show_combat_interface(true)
 }
 
 function select_route(route_element) {
