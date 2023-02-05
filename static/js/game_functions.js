@@ -317,7 +317,17 @@ function game_over() {
 
 function rebirth() {
     transition_screen(screen_gameover, screen_loading)
-    player = new Player("Gideon", 20, 10, 10)
+    let new_name;
+    let name_request = new XMLHttpRequest()
+    name_request.open('GET', '/name', false)
+    name_request.send()
+    console.log(name_request.status)
+    if (name_request.status != 200) {
+        new_name = 'Gideon'
+    } else {
+        new_name = name_request.responseText
+    }
+    player = new Player(new_name, 25, 10, 10)
     current_level = 1
     is_applied = false
     save_to_local()
