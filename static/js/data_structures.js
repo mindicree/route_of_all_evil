@@ -35,6 +35,12 @@ class Enemy {
     }
 }
 
+class Boss extends Enemy{
+    constructor(name, image, hp, atk, def, level=1) {
+        super(name, image, hp, atk, def, level)
+    }
+}
+
 const ITEM_TYPES = ['POTION', 'WEAPON', 'ARMOR']
 
 class Item {
@@ -85,19 +91,6 @@ class Potion extends Item {
     constructor(name, image, heal, level=1) {
         super(name, image, level)
         this.heal = heal
-    }
-}
-
-class Boss {
-    constructor(name, image, hp, atk, def, level=1) {
-        this.name = name
-        this.image = image
-        this.hp = hp
-        this.atk = atk
-        this.def = def
-        this.level = level
-
-        this.current_hp = hp
     }
 }
 
