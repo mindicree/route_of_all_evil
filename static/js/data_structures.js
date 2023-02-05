@@ -5,8 +5,17 @@ class Enemy {
         this.atk = atk
         this.def = def
         this.image = image
-        this.current_hp = hp
         this.level = level
+
+        this.current_hp = this.getCurrentHp()
+    }
+
+    getCurrentHpMax() {
+        let current_stat = this.hp
+        for (let i = 0; i < this.level; i++) {
+            current_stat *= 1.1
+        }
+        return current_stat
     }
 
     getCurrentAtk() {
