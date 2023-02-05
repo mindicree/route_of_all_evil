@@ -129,7 +129,10 @@ function update_combatresult() {
     
 }
 function update_boss() {
-    
+    if (current_enemy && boss_fight) {
+        document.querySelector('#boss_banner').src = `/img/enemies/${current_enemy.image}`
+        document.querySelector('#boss_banner_name').innerHTML = current_enemy.name
+    }
 }
 
 function update_chest() {

@@ -1240,6 +1240,10 @@ h1,h2,h3,h4,h5,h6,p {
     width: 75%;
   }
 
+  .xl\:rounded {
+    border-radius: 0.25rem;
+  }
+
   .xl\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
