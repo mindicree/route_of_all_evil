@@ -206,10 +206,42 @@ function damage_player(dmg) {
 }
 
 function combat_victory() {
+    // fade out enemy
     let enemy_container = document.querySelector('#combat_enemy_container')
     enemy_container.classList.remove('fade_out_med')
     void enemy_container.offsetWidth
     enemy_container.classList.add('fade_out_med')
+
+    // get stat and reward changes
+    let hp_bonus = Math.floor(current_enemy.getCurrentHpMax()/50)
+    let atk_bonus = Math.floor(current_enemy.getCurrentAtk()/10)
+    let def_bonus = Math.floor(current_enemy.getCurrentDef()/10)
+    let gold_bonus = get_gold_reward()
+
+    // apply changes to player
+    player.hp += hp_bonus
+    player.current_hp += hp_bonus
+    player.atk += atk_bonus
+    player.def += def_bonus
+    player.gold += gold_bonus
+
+    // setup data based on changes
+    document.querySelector('#combat_result_status').innerHTML = `${current_enemy.name} has been defeated`
+    let status_message = 'One step closer on this path of destruction<br><br>'
+    status_message += (hp_bonus > 0 ? `HP: <span class="text-white">&nbsp;+${hp_bonus}</span><br>` : '')
+    status_message += (atk_bonus > 0 ? `ATK: <span class="text-white">&nbsp;+${atk_bonus}</span><br>` : '')
+    status_message += (def_bonus > 0 ? `DEF: <span class="text-white">&nbsp;+${def_bonus}</span><br>` : '')
+    status_message += (gold_bonus > 0 ? `GP: <span class="text-white">&nbsp;+${gold_bonus}</span><br>` : '')
+    document.querySelector('#combat_result_details').innerHTML = status_message
+
+    // transition to combat results
+    transition_screen(screen_combat, screen_combatresult)
+}
+
+function get_gold_reward() {
+    let gold_reward = current_enemy.getPowerScale() * Math.random()
+    gold_reward = Math.max(1, gold_reward)
+    return Math.floor(gold_reward)
 }
 
 function game_over() {
