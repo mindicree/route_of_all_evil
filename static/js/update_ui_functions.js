@@ -50,7 +50,25 @@ function update_storyresult() {
     
 }
 function update_combat() {
+    if (current_enemy) {
+        let combat_enemy_name = document.querySelector('#combat_enemy_name')
+        let combat_enemy_image = document.querySelector('#combat_enemy_image')
     
+        let combat_player_hp = document.querySelector('#combat_player_hp')
+        let combat_player_atk = document.querySelector('#combat_player_atk')
+        let combat_player_def = document.querySelector('#combat_player_def')
+    
+        let enemy_name = `${current_enemy.name}, LV. ${current_enemy.level}`
+        let player_hp = `${player.current_hp}/${player.hp}`
+        let player_atk = `${player.getCurrentAtk()}`
+        let player_def = `${player.getCurrentDef()}`
+    
+        combat_enemy_name.innerHTML = enemy_name
+        combat_enemy_image.src = `/img/enemies/${current_enemy.image}`
+        combat_player_hp.innerHTML = player_hp
+        combat_player_atk.innerHTML = player_atk
+        combat_player_def = player_def
+    }
 }
 function update_combatresult() {
     
