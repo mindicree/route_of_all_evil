@@ -36,7 +36,7 @@ class Enemy {
     }
 
     getPowerScale() {
-        return this.getCurrentHpMax()/2 + this.getCurrentAtk() + this.getCurrentDef()
+        return Math.ceil(this.getCurrentHpMax()/2 + this.getCurrentAtk() + this.getCurrentDef())
     }
 
     isDead() {
