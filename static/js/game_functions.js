@@ -23,8 +23,12 @@ function update_ui() {
 }
 
 function select_route(route_element) {
-    if (current_level > 5 && Math.random() < 0.05) {
+    boss_fight = false
+    if (current_level > 10 && Math.random() < 0.05) {
         // boss interrupt
+        transition_screen(screen_route, screen_boss)
+        create_boss()
+        return
     }
     let route_choice = route_element.getAttribute('data-routetype')
     current_level++;
@@ -67,7 +71,16 @@ function create_event() {
     update_ui()
 }
 
+function create_boss() {
+    boss_fight = true
+    let enemy_selection = Math.floor(Math.random() * bosses.length)
+    current_enemy = Object.assign(new Boss(), JSON.parse(JSON.stringify(bosses[enemy_selection])))
+    current_enemy.setLevel(Math.ceil(get_new_level()/2))
+    update_ui()
+}
+
 function create_enemy() {
+    boss_fight = false
     let enemy_selection = Math.floor(Math.random() * enemies.length)
     current_enemy = Object.assign(new Enemy(), JSON.parse(JSON.stringify(enemies[enemy_selection])))
     current_enemy.setLevel(get_new_level())
@@ -266,7 +279,7 @@ function isHit() {
 }
 
 function isRun() {
-    return Math.random() > current_enemy.run
+    return Math.random() > (boss_fight ? 1.0 : current_enemy.run)
 }
 
 function isCrit() {
@@ -357,6 +370,13 @@ function damage_player(dmg, is_crit) {
 }
 
 function combat_victory() {
+    // add enemy to count
+    if (boss_fight) {
+        player.bosses.push(current_enemy.name)
+    } else {
+        player.enemies.push(current_enemy.name)
+    }
+
     // fade out enemy
     let enemy_container = document.querySelector('#combat_enemy_container')
     enemy_container.classList.remove('fade_out_med')
@@ -375,6 +395,7 @@ function combat_victory() {
     player.atk += atk_bonus
     player.def += def_bonus
     player.current_gold += gold_bonus
+    boss_fight = false
 
     // setup data based on changes
     document.querySelector('#combat_result_status').innerHTML = `${current_enemy.name} has been defeated`

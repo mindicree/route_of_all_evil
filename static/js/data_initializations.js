@@ -45,11 +45,11 @@ let enemies = [
 ]
 
 let bosses = [
-    new Boss ("Guamangrkath", "mor.jpg", 100, 150, 50),
-    new Boss ("Yithashaquoph", "mor.jpg", 200, 50, 50),
-    new Boss ("Fthil Yag-Tal", "mor.jpg", 75, 150, 70),
-    new Boss ("At-tstondeha", "mor.jpg", 50, 125, 125),
-    new Boss ("Azangarnoth", "mor.jpg", 200, 200, 100)
+    new Boss ("Guamangrkath", "00010_00010.jpg", 100, 150, 50),
+    new Boss ("Yithashaquoph", "00003_00003.jpg", 200, 50, 50),
+    new Boss ("Fthil Yag-Tal", "00012_00012.jpg", 75, 150, 70),
+    new Boss ("At-tstondeha", "00001_00001.jpg", 50, 125, 125),
+    new Boss ("Azangarnoth", "00005_00005.jpg", 200, 200, 100)
 ]
 
 let events = [
