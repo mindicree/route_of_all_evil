@@ -11,6 +11,7 @@ let current_story = null
 let current_level = 1
 let current_screen = null
 let bosses_defeated = []
+let orb_ancestor = null
 
 // screen initializations
 let game_screen_container = document.querySelector('#game_screen_container')
