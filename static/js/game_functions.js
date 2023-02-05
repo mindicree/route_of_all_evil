@@ -179,7 +179,7 @@ function damage_enemy(dmg, is_crit) {
     combat_damage.classList.add('damage_flash')
 
     // adjust health bar
-    let health_percent = Math.ceil((current_enemy.current_hp / current_enemy.getCurrentHpMax()) * 100)
+    let health_percent = (current_enemy.current_hp > 0 ? Math.ceil((current_enemy.current_hp / current_enemy.getCurrentHpMax()) * 100) : 0)
     document.querySelector('#combat_enemy_health_fill').style.width = `${health_percent}%`
 }
 
