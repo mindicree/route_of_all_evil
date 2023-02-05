@@ -138,7 +138,11 @@
                 </div>
             </div>
             <div id="screen_combatresult" class="opacity-0 inactive_screen">
-    
+                <div class="grid h-[50] m-auto">
+                    <h3 id="combat_result_status" class="text-red-700 m-auto text-center justify-between text-3xl md:text-5xl uppercase">STATUS</h3>
+                    <p id="combat_result_details" class="text-red-700 m-auto text-center justify-between text-xl md:text-2xl pt-10 uppercase">DETAILS</p>
+                </div>
+                <h4 onclick="create_routes();transition_screen(screen_combatresult, screen_route)" id="btn_home_tutorial" class="text-red-700 m-auto text-center text-2xl md:text-4xl opacity:100 xl:opacity-75 xl:hover:opacity-100 xl:hover:scale-110 xl:hover:cursor-pointer transition duration-100">CONTINUE</h4>
             </div>
             <div id="screen_boss" class="opacity-0 inactive_screen">
     
