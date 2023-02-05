@@ -1181,6 +1181,14 @@ h1,h2,h3,h4,h5,h6,p {
     height: 90vh;
   }
 
+  .lg\:h-\[80\] {
+    height: 80;
+  }
+
+  .lg\:h-\[80vh\] {
+    height: 80vh;
+  }
+
   .lg\:w-full {
     width: 100%;
   }

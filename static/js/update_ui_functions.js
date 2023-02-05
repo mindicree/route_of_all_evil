@@ -133,7 +133,50 @@ function update_boss() {
 }
 
 function update_chest() {
+    // assign item where necessary
+    if (new_item) {
+        let image_url;
+        let newitem_title;
+        if (new_item instanceof Weapon) {
+            player.current_weapon = Object.assign(new Weapon(), JSON.parse(JSON.stringify(new_item)))
+            switch (new_item.type) {
+                case WEAPON_TYPES.SWORD:
+                    break;
+                case WEAPON_TYPES.BOW:
+                    break;
+                case WEAPON_TYPES.DAGGER:
+                    break;
+                case WEAPON_TYPES.GUN:
+                    break;
+                default:
+                    alert('Something went wrong in update_chest: weapon type not valid')
+            }
+            newitem_title = `${new_item.name}, LV. ${new_item.level}`
+        } else if (new_item instanceof Armor) {
+            switch (new_item.type) {
+                case ARMOR_TYPES.HEAD:
+                    player.current_head = Object.assign(new Armor(), JSON.parse(JSON.stringify(new_item)))
+                    break;
+                case ARMOR_TYPES.BODY:
+                    player.current_body = Object.assign(new Armor(), JSON.parse(JSON.stringify(new_item)))
+                    break;
+                case ARMOR_TYPES.LEG:
+                    player.current_leg = Object.assign(new Armor(), JSON.parse(JSON.stringify(new_item)))
+                    break;
+                default:
+                    alert('Something went wrong in update_chest: armor type not valid')
+                    console.log(new_item)
+            }
+            newitem_title = `${new_item.name}, LV. ${new_item.level}`
+        } else {
+            player.gold += new_item
+            newitem_title = `${new_item} GP`
+        }
     
+        new_item = null
+        // provide layout
+        document.querySelector('#newitem_title').innerHTML = newitem_title
+    }
 }
 
 function update_orb() {
