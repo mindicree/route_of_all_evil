@@ -293,11 +293,11 @@ function rebirth() {
 
 function save_to_local() {
     let new_save = {
-        'player': JSON.stringify(player),
-        'player_history': JSON.stringify(player_history)
+        'player': player,
+        'player_history': player_history
     }
     console.log(new_save)
-    localStorage.setItem('save_data', new_save)
+    localStorage.setItem('save_data', JSON.stringify(new_save))
 }
 
 function isDropGold() {
