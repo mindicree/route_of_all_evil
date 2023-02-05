@@ -10,11 +10,9 @@ let current_routes = []
 let current_story = null
 let current_level = 1
 let current_screen = null
-let bosses_defeated = []
 let orb_ancestor = null
 let new_item = null
 let boss_fight = false
-let defeated_bosses = []
 
 // screen initializations
 let game_screen_container = document.querySelector('#game_screen_container')

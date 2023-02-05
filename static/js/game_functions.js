@@ -28,6 +28,9 @@ function select_route(route_element) {
         // boss interrupt
         transition_screen(screen_route, screen_boss)
         create_boss()
+        setTimeout(() => {
+            transition_screen(screen_boss, screen_combat)
+        }, 3000)
         return
     }
     let route_choice = route_element.getAttribute('data-routetype')
@@ -372,9 +375,9 @@ function damage_player(dmg, is_crit) {
 function combat_victory() {
     // add enemy to count
     if (boss_fight) {
-        player.bosses.push(current_enemy.name)
+        player.bosses_defeated.push(current_enemy.name)
     } else {
-        player.enemies.push(current_enemy.name)
+        player.enemies_defeated.push(current_enemy.name)
     }
 
     // fade out enemy
