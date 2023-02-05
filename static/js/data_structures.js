@@ -101,8 +101,9 @@ const WEAPON_TYPES = {
     GUN: 'gun'
 }
 class Weapon extends Item {
-    constructor(name, atk, level=1) {
+    constructor(name, type, atk, level=1) {
         super(name, level)
+        this.type = type
         this.atk = atk
     }
 
