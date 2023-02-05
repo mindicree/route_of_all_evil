@@ -15,7 +15,7 @@ class Enemy {
         for (let i = 0; i < this.level; i++) {
             current_stat *= 1.1
         }
-        return current_stat
+        return Math.floor(current_stat)
     }
 
     getCurrentAtk() {
@@ -23,7 +23,7 @@ class Enemy {
         for (let i = 0; i < this.level; i++) {
             current_stat *= 1.1
         }
-        return current_stat
+        return Math.floor(current_stat)
     }
 
     getCurrentDef() {
@@ -31,7 +31,7 @@ class Enemy {
         for (let i = 0; i < this.level; i++) {
             current_stat *= 1.1
         }
-        return current_stat
+        return Math.floor(current_stat)
     }
 }
 
@@ -62,7 +62,7 @@ class Armor extends Item {
         for (let i = 0; i < this.level; i++) {
             current_stat *= 1.1
         }
-        return current_stat
+        return Math.floor(current_stat)
     }
 }
 
@@ -77,7 +77,7 @@ class Weapon extends Item {
         for (let i = 0; i < this.level; i++) {
             current_stat *= 1.1
         }
-        return current_stat
+        return Math.floor(current_stat)
     }
 }
 
@@ -120,7 +120,7 @@ class Player {
 
     getCurrentAtk() {
         if (this.current_weapon) {
-            return this.atk + this.current_weapon.atk
+            return this.atk + this.current_weapon.getCurrentAtk()
         } else {
             return this.atk
         }
@@ -131,7 +131,7 @@ class Player {
         if (this.current_head) current_stat += this.current_head.getCurrentDef()
         if (this.current_body) current_stat += this.current_body.getCurrentDef()
         if (this.current_leg) current_stat += this.current_leg.getCurrentDef()
-        return current_stat
+        return Math.floor(current_stat)
     }
 }
 
