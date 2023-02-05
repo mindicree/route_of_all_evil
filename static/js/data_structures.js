@@ -59,9 +59,8 @@ class Boss extends Enemy{
 const ITEM_TYPES = ['POTION', 'WEAPON', 'ARMOR']
 
 class Item {
-    constructor(name, image, level=1) {
+    constructor(name, level=1) {
         this.name = name
-        this.image = image
         this.level = level
     }
 }
@@ -72,8 +71,8 @@ const ARMOR_TYPES = {
     LEG: 'leg'
 }
 class Armor extends Item {
-    constructor(name, image, type, def, level=1) {
-        super(name, image, level)
+    constructor(name, type, def, level=1) {
+        super(name, level)
         this.type = type
         this.def = def
     }
@@ -96,8 +95,8 @@ class Armor extends Item {
 }
 
 class Weapon extends Item {
-    constructor(name, image, atk, level=1) {
-        super(name, image, level)
+    constructor(name, atk, level=1) {
+        super(name, level)
         this.atk = atk
     }
 
