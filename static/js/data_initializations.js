@@ -11,14 +11,14 @@ let potions = [
 ]
 
 let enemies = [
-    new Enemy ("Atamil, The Nightwalker", "00012.jpg", 30,5,6),
-    new Enemy ("Orvach-Ho-Iih", "00013.jpg", 15,10,4),
-    new Enemy ("The Forest's Tears", "00018.jpg", 50,4,20),
-    new Enemy ("It That Tells Of Psychoreal", "00021.jpg", 30,3,9),
-    new Enemy ("L'Loigo", "00022.jpg", 45,10,15),
-    new Enemy ("G'Lyeb, The Forest Watcher", "00023.jpg", 20,3,7),
-    new Enemy ("They That Speak", "00051.jpg", 150,1,3),
-    new Enemy ("Nioigon", "00055.jpg", 30,3,10)
+    new Enemy ("Atamil, The Nightwalker", "00012.jpg", 30,5,6,0.3),
+    new Enemy ("Orvach-Ho-Iih", "00013.jpg", 15,10,4,0.2),
+    new Enemy ("The Forest's Tears", "00018.jpg", 50,4,20,0.9),
+    new Enemy ("It That Tells Of Psychoreal", "00021.jpg", 30,3,9,0.95),
+    new Enemy ("L'Loigo", "00022.jpg", 45,10,15,0.6),
+    new Enemy ("G'Lyeb, The Forest Watcher", "00023.jpg", 20,3,7,0.5),
+    new Enemy ("They That Speak", "00051.jpg", 150,1,3,0.1),
+    new Enemy ("Nioigon", "00055.jpg", 30,3,10,0.25)
 ]
 
 let bosses = [
