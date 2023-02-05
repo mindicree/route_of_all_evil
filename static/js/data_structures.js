@@ -7,7 +7,7 @@ class Enemy {
         this.image = image
         this.level = level
 
-        this.current_hp = this.getCurrentHp()
+        this.current_hp = this.getCurrentHpMax()
     }
 
     getCurrentHpMax() {
