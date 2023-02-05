@@ -119,6 +119,8 @@ function combat_action(action) {
     // if hit, calc damage and apply
     if (isHit()) {
         damage_player()
+    } else {
+        miss_player()
     }
 
     // if player dead transition to game over
@@ -199,6 +201,10 @@ function miss_enemy() {
     void combat_damage.offsetWidth
     combat_damage.innerHTML = 'MISSED'
     combat_damage.classList.add('damage_flash')
+}
+
+function miss_player() {
+    
 }
 
 function damage_player(dmg) {
