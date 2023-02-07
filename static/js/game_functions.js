@@ -24,7 +24,7 @@ function update_ui() {
 
 function select_route(route_element) {
     boss_fight = false
-    if (current_level > 10 && Math.random() < 0.05) {
+    if (current_level > 5 && Math.random() < 0.25) {
         // boss interrupt
         transition_screen(screen_route, screen_boss)
         create_boss()

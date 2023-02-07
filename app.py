@@ -27,4 +27,4 @@ def get_image(cat, image_name):
     return send_file(f'./static/img/{cat}/{image_name}')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=80)
