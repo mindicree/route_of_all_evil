@@ -102,12 +102,30 @@ function get_new_level(r=5) {
 function create_chest() {
     let reward_select = Math.random() * 100
     if (reward_select < 33) {
-        reward_select = Math.floor(Math.random()*weapon_rare.length)
-        new_item = Object.assign(new Weapon(), JSON.parse(JSON.stringify(weapon_rare[reward_select])))
+        rarity = Math.random() * 100
+        if (rarity < 10) {
+            reward_select = Math.floor(Math.random()*weapon_rare.length)
+            new_item = Object.assign(new Weapon(), JSON.parse(JSON.stringify(weapon_rare[reward_select])))
+        } else if (rarity < 50) {
+            reward_select = Math.floor(Math.random()*weapon_uncommon.length)
+            new_item = Object.assign(new Weapon(), JSON.parse(JSON.stringify(weapon_uncommon[reward_select])))
+        } else {
+            reward_select = Math.floor(Math.random()*weapon_common.length)
+            new_item = Object.assign(new Weapon(), JSON.parse(JSON.stringify(weapon_common[reward_select])))
+        }
         new_item.setLevel(get_new_level(3))
     } else if (reward_select < 66) {
-        reward_select = Math.floor(Math.random()*armor_rare.length)
-        new_item = Object.assign(new Armor(), JSON.parse(JSON.stringify(armor_rare[reward_select])))
+        rarity = Math.random() * 100
+        if (rarity < 10) {
+            reward_select = Math.floor(Math.random()*armor_rare.length)
+            new_item = Object.assign(new Armor(), JSON.parse(JSON.stringify(armor_rare[reward_select])))
+        } else if (rarity < 50) {
+            reward_select = Math.floor(Math.random()*armor_uncommon.length)
+            new_item = Object.assign(new Armor(), JSON.parse(JSON.stringify(armor_uncommon[reward_select])))
+        } else {
+            reward_select = Math.floor(Math.random()*armor_common.length)
+            new_item = Object.assign(new Armor(), JSON.parse(JSON.stringify(armor_common[reward_select])))
+        }
         new_item.setLevel(get_new_level(3))
     } else {
         new_item = Math.ceil(Math.random() * Math.pow(current_level, 1.1) + 50)
