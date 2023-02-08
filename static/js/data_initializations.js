@@ -52,6 +52,10 @@ let bosses = [
     new Boss ("Azangarnoth", "00005_00005.jpg", 200, 200, 100)
 ]
 
+function white(text) {
+    return `<span class="text-white">${text}</span>`
+}
+
 let events = [
     new Event (
         "Draven's Elixer",
@@ -66,13 +70,13 @@ let events = [
             let outtext = document.querySelector('#storyresult_text')
 
             if (result < 33) {
-                outtext.innerHTML += 'The odor is potent, but you wash it down. The odor worries you, but <span class="text-white">you dont seem to feel anything happening.<span class="text-white"> \"Aw, that sucks\" the artificer says as he continues on another.'
-            } else if (result < 95) {
+                outtext.innerHTML += `The odor is potent, but you wash it down. The odor worries you, but ${white("you don't seem to feel anything.")} "Aw, that sucks" the artificer says as he continues on another.`
+            } else if (result < 90) {
                 player.current_hp = Math.floor(Math.min(player.hp, player.current_hp*1.1))
-                outtext.innerHTML += 'The odor is potent, but you wash it down. Suddenly you feel <span class="text-white">reguvenated with a bit of life</span>. \"Hey, not bad\" the artificer says, almost hoping for something else'
+                outtext.innerHTML += `The odor is potent, but you wash it down. Suddenly you feel ${white("reguvenated with a bit of life.")} "Hey, not bad" the artificer says, almost hoping for something else`
             } else {
                 player.current_hp = Math.ceil(player.current_hp / 2)
-                outtext.innerHTML += 'The odor is potent, too potent in fact. After a few seconds of endurance, <span class="text-white">you hurl the concoction and what feels like your whole insides</span>, as the artificer just laughs. \"Hah, not bad! Let\'s do that again!\"'
+                outtext.innerHTML += `The odor is potent, too potent in fact. After a few seconds of endurance, ${white(`you hurl the concoction and what feels like your whole insides`)}, as the artificer just laughs. "Hah, not bad! Let\'s do that again!"`
             }
         },
         () => {
@@ -88,15 +92,30 @@ let events = [
         "You proceed to help her up by the hand. ",
         "You continue on as if you heard nothing. Who knows what troubles could arise by helping those with unspeakable powers.",
         () => {
-            if (Math.random()*100 < 85) {
-                let outtext = document.querySelector('#storyresult_text')
+            let result = Math.random() * 100
+            let outtext = document.querySelector('#storyresult_text')
+            if (result < 10) {
+                // nothing but goodness
+                outtext.innerHTML += `Your good deeds are well recognized by the woman. "This world has seen so many things, but I'm glad there are still those willing to try" the witch says as she wanders off. Ocasionally, ${white('acts of kindess are their own reward.')}`
+            } else if (result < 15) {
+                player.hp = Math.ceil(player.hp * 1.5)
+                player.current_hp = Math.ceil(player.current_hp * 1.5)
+                player.atk = Math.ceil(player.atk * 1.5)
+                player.def = Math.ceil(player.def * 1.5)
+                outtext.innerHTML += `Your good deeds are well recognized by the woman. She leans close, "Despite your appearance, you are very kind. I'm not supposed to do this but please take this and be well." The witch touches you with a glowing hand. Suddenly,${white('you feel strengthened like never before.')} After the spell, she suddenly vanishes into thin air. Who was the kind one in this situation?`
+            } else if (result < 70) {
+                // monetary gain
                 player.current_gold += Math.ceil(current_level * Math.random()*10)
-                outtext.innerHTML += 'Your good deeds are well recognized and <span class="text-white">you are even rewarded financially</span>. \"This world has seen so many things, but I\'m glad there are still those willing to try\" the witch says as she wanders off. What a thought.'
-            } else {
-                let outtext = document.querySelector('#storyresult_text')
+                outtext.innerHTML += `Your good deeds are well recognized and ${white('you are even rewarded financially.')} "This world has seen so many things, but I'm glad there are still those willing to try" the witch says as she vanishes. What a thought.`
+            } else if (result < 95) {
+                // monetary loss
                 player.current_gold -= Math.ceil(current_level * Math.random()*10)
                 if (player.current_gold < 0) player.current_gold = 0;
-                outtext.innerHTML += 'Your good deeds are well recognized and the witch had many kind words to say, however, you can\'t help feel that <span class="text-white">you\'re coin pouch is just a bit lighter</span>. \"It helps so much to have people like you\" Of course it is...'
+                outtext.innerHTML += `Your good deeds are well recognized and the witch had many kind words to say, however, you can't help feel that ${white(`you're coin pouch is a bit lighter.`)} "It helps so much to have people like you" she says with a crooked smile as she vanishes into this air. Of course it is...`
+            } else {
+                // damage
+                player.current_hp = Math.ceil(player.current_hp / 2)
+                outtext.innerHTML += `Suddenly, you get a cold feeling in that hand. "Hm, so gullible..." the witch says as ${white(`you're body gets colder and colder.`)} You break away before it takes you completely, and you are met with the witch, now more youthful in appearance. "It helps so much to have people like you in this world" she says with a crooked smile as she vanishes into this air. How wretched.`
             }
         },
         () => {
@@ -109,16 +128,17 @@ let events = [
         "No matter how hard to try to shake the chains of mortality, it always finds a way to creep it's way into your life. Sometimes, it's not so bad. When the presence of The Apothecary's Weight enters your vision, there's almost a thought that mortality, and eventual death, may not be so bad.",
         "Rest a little bit",
         "Rest a little longer",
-        "You take rest at the unassuming refuge. After a good rest, <span class'text-white'>you're whole body feels refreshed. \"Come again!\" you hear from a familiar voice. The demand is almost not needed.</span>",
-        "You take rest at the unassuming refuge for an extended stay. You ponder the necessity of a lazy day, but only briefly as you <span class='text-white'>let your muscles loose for a needed relaxation</span> in this dreary world. ",
+        `You take rest at the unassuming yet familiar refuge. After a good rest, ${white(`you're body feels refreshed.`)} "Come again!" you hear from a familiar voice. The demand is almost not needed.</span>`,
+        `You take rest at the unassuming yet familiar refuge for an extended stay. You ponder the necessity of a lazy day, but only briefly as you ${white(`let your muscles loose for a while`)} in this dreary world.`,
         () => {
-            player.hp += 5
+            player.hp += Math.ceil(level / 5)
             player.current_hp = player.hp
         },
         () => {
-            player.hp = Math.floor(player.hp*1.5)
+            player.hp = Math.floor(player.hp*2)
             player.current_hp = player.hp
-            player.atk = Math.floor(player.atk * 0.85)
+            player.atk = Math.floor(player.atk * 0.75)
+            player.def = Math.floor(player.def * 0.75)
         }
     )
 ]
