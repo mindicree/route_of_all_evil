@@ -72,7 +72,7 @@ let events = [
             if (result < 33) {
                 outtext.innerHTML += `The odor is potent, but you wash it down. The odor worries you, but ${white("you don't seem to feel anything.")} "Aw, that sucks" the artificer says as he continues on another.`
             } else if (result < 90) {
-                player.current_hp = Math.floor(Math.min(player.hp, player.current_hp*1.1))
+                player.current_hp = Math.floor(Math.min(player.hp, player.current_hp*(Math.random()*2 + 1)))
                 outtext.innerHTML += `The odor is potent, but you wash it down. Suddenly you feel ${white("reguvenated with a bit of life.")} "Hey, not bad" the artificer says, almost hoping for something else`
             } else {
                 player.current_hp = Math.ceil(player.current_hp / 2)
@@ -131,7 +131,7 @@ let events = [
         `You take rest at the unassuming yet familiar refuge. After a good rest, ${white(`you're body feels refreshed.`)} "Come again!" you hear from a familiar voice. The demand is almost not needed.</span>`,
         `You take rest at the unassuming yet familiar refuge for an extended stay. You ponder the necessity of a lazy day, but only briefly as you ${white(`let your muscles loose for a while`)} in this dreary world.`,
         () => {
-            player.hp += Math.ceil(level / 5)
+            player.hp += Math.ceil(current_level / 5)
             player.current_hp = player.hp
         },
         () => {
