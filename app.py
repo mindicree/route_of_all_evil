@@ -26,9 +26,7 @@ def home():
 
 @app.route('/name', methods=['GET'])
 def get_name():
-    new_name = names_list[int(random()*len(names_list))]
-    print(new_name)
-    return new_name
+    return names_list[int(random()*len(names_list))]
 
 @app.route('/fonts/<font_name>')
 def get_font(font_name):
